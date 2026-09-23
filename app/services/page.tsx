@@ -1,22 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
-import { CtaBand } from "@/components/cta-band";
-import { EngineeringLabel } from "@/components/engineering-label";
-import { ProductVisual } from "@/components/product-visual";
-import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { services } from "@/content/services";
 import { site } from "@/content/site";
-
-const serviceThemeAnchor: Record<string, string> = {
-  "Operating envelope and exception states": "operating-envelope",
-  "Drawdown versus production response": "sustainable-drawdown",
-  "Flux and screen integrity": "flux-analysis",
-  "Lite PTA and pseudo skin": "pressure-test-analysis",
-  "AI-assisted reading of surveillance results": "agentic-ai",
-};
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: services.meta.title,
@@ -28,202 +17,142 @@ export const metadata: Metadata = {
   },
 };
 
+function FluxDiagram() {
+  return (
+    <svg viewBox="0 0 320 220" className="h-full w-full" role="img" aria-label="Diagram of flow through a slotted screen.">
+      <rect width="320" height="220" fill="oklch(0.86 0.03 145)" />
+      <g fill="none" stroke="oklch(0.32 0.04 145)" strokeWidth="1.6">
+        <path d="M40 36h240M40 72h240M40 108h240M40 144h240M40 180h240" />
+        <path d="M70 20v180M120 20v180M170 20v180M220 20v180M260 20v180" />
+      </g>
+      <path d="M24 110h36M260 110h36" stroke="oklch(0.32 0.04 145)" strokeWidth="2" />
+    </svg>
+  );
+}
+
+const sectionTone = [
+  "bg-[var(--company-sage)]",
+  "bg-[var(--company-sand)]",
+  "bg-[var(--company-stone)]",
+  "bg-[var(--company-beige)]",
+  "bg-[var(--company-olive)]",
+  "bg-[var(--company-sand)]",
+  "bg-[var(--company-stone)]",
+];
+
 export default function ServicesPage() {
-  const {
-    hero,
-    collaboration,
-    domains,
-    platform,
-    contextualVisual,
-    pilotCta,
-  } = services;
+  const { hero, offerings } = services;
 
   return (
-    <main className="flex flex-1 flex-col">
-      {/* Hero */}
-      <section
-        aria-labelledby="services-hero-heading"
-        className="rule-bottom engineering-grid"
-      >
-        <div className="container-site section-y">
-          <div className="max-w-3xl flex flex-col gap-6 lg:gap-8">
-            <EngineeringLabel as="p">{hero.eyebrow}</EngineeringLabel>
-            <h1
-              id="services-hero-heading"
-              className="text-display max-w-2xl text-balance"
-            >
-              {hero.title}
-            </h1>
-            <p className="text-body-muted max-w-xl">{hero.description}</p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button
-                size="lg"
-                render={<Link href={hero.primaryCta.href} />}
-                nativeButton={false}
-              >
-                {hero.primaryCta.label}
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                render={<Link href={hero.secondaryCta.href} />}
-                nativeButton={false}
-              >
-                {hero.secondaryCta.label}
-              </Button>
-            </div>
+    <main className="company-canvas flex flex-1 flex-col">
+      <section aria-labelledby="services-hero-heading" className="relative min-h-[70svh] bg-neutral-950 text-white">
+        <div className="absolute inset-0">
+          <Image
+            src={hero.image.src}
+            alt={hero.image.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/25" />
+        </div>
+        <div className="container-site relative flex min-h-[70svh] flex-col justify-end gap-5 py-16 sm:py-20">
+          <h1 id="services-hero-heading" className="max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+            {hero.title}
+          </h1>
+          <p className="text-2xl font-medium">{hero.lede}</p>
+          <p className="max-w-2xl text-base leading-relaxed text-white/90">{hero.body}</p>
+          <div>
+            <Button size="lg" render={<Link href={hero.cta.href} />} nativeButton={false}>
+              {hero.cta.label}
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Collaboration */}
-      <section
-        aria-labelledby="collaboration-heading"
-        className="rule-bottom bg-surface"
-      >
-        <div className="container-site section-y">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
-            <header className="flex flex-col gap-4">
-              <EngineeringLabel>{collaboration.label}</EngineeringLabel>
-              <h2 id="collaboration-heading" className="text-h1 text-balance">
-                {collaboration.title}
-              </h2>
-              <div className="flex flex-col gap-4">
-                {collaboration.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 32)} className="text-body-muted">
+      <nav aria-label="Service sections" className="border-b border-foreground/10 bg-[var(--company-sand)]">
+        <ul className="container-site flex gap-x-6 gap-y-3 overflow-x-auto py-4">
+          {offerings.map((item) => (
+            <li key={item.id} className="shrink-0">
+              <a href={`#${item.id}`} className="focus-ring rounded-sm text-sm font-medium underline-offset-4 hover:underline">
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {offerings.map((item, index) => {
+        const imageFirst = index % 2 === 1;
+        const wide = item.id === "sustainable-drawdown" || item.id === "agentic-ai";
+        return (
+          <section
+            key={item.id}
+            id={item.id}
+            aria-labelledby={`${item.id}-heading`}
+            className={cn("scroll-mt-20", sectionTone[index])}
+          >
+            <div className={cn("container-site section-y", wide ? "" : "grid items-center gap-10 lg:grid-cols-2 lg:gap-16")}>
+              {item.id === "flux-analysis" ? (
+                <div className={cn("relative min-h-64 overflow-hidden", imageFirst ? "lg:order-first" : "lg:order-last")}>
+                  <FluxDiagram />
+                </div>
+              ) : item.image && !wide ? (
+                <div className={cn("relative min-h-72 overflow-hidden sm:min-h-96", imageFirst ? "lg:order-first" : "lg:order-last")}>
+                  <Image
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    className="object-cover object-left-top"
+                  />
+                </div>
+              ) : null}
+
+              <div className={cn("flex flex-col gap-5", wide ? "mx-auto max-w-3xl" : "")}>
+                {item.label ? <p className="text-sm font-medium text-foreground/70">{item.label}</p> : null}
+                <h2 id={`${item.id}-heading`} className="text-h1 text-balance">
+                  {item.title}
+                </h2>
+                {item.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)} className="text-body max-w-2xl">
                     {paragraph}
                   </p>
                 ))}
-              </div>
-            </header>
-
-            <ul className="flex flex-col gap-0">
-              {collaboration.principles.map((principle) => (
-                <li
-                  key={principle}
-                  className="flex gap-4 border-t border-border-subtle py-5 first:border-t-0 first:pt-0 last:pb-0"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 size-1.5 shrink-0 bg-ete-green"
-                  />
-                  <p className="text-body">{principle}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Service groups */}
-      <section
-        aria-labelledby="domains-heading"
-        className="rule-bottom bg-surface"
-      >
-        <div className="container-site section-y">
-          <div className="flex flex-col gap-12 lg:gap-16">
-            <SectionHeading
-              label={domains.label}
-              title={domains.title}
-              description={domains.description}
-              className="max-w-2xl"
-              titleId="domains-heading"
-            />
-
-            <div className="flex flex-col gap-0">
-              {domains.items.map((item) => (
-                <article
-                  key={item.id}
-                  id={
-                    item.id === "surveillance-diagnostics"
-                      ? "exception-based-monitoring"
-                      : undefined
-                  }
-                  aria-labelledby={`domain-${item.id}-heading`}
-                  className="grid scroll-mt-20 gap-6 border-t border-border-subtle py-10 first:border-t-0 first:pt-0 lg:grid-cols-[minmax(0,0.35fr)_minmax(0,1fr)] lg:gap-12 lg:py-12"
-                >
-                  <div className="flex flex-col gap-2">
-                    <EngineeringLabel>{item.name}</EngineeringLabel>
-                    <h3
-                      id={`domain-${item.id}-heading`}
-                      className="text-h3 text-balance"
-                    >
-                      {item.summary}
-                    </h3>
+                {item.points ? (
+                  <ul className="flex max-w-2xl flex-col gap-4">
+                    {item.points.map((point) => (
+                      <li key={point} className="text-sm leading-relaxed">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                {item.cta ? (
+                  <div>
+                    <Button render={<Link href={item.cta.href} />} nativeButton={false}>
+                      {item.cta.label}
+                    </Button>
                   </div>
-
-                  <div className="flex flex-col gap-4">
-                    <p className="text-body-muted">{item.detail}</p>
-                    {item.themes ? (
-                      <ul className="flex flex-col gap-2 border-l-2 border-ete-green pl-4">
-                        {item.themes.map((theme) => (
-                          <li
-                            key={theme}
-                            id={serviceThemeAnchor[theme]}
-                            className="scroll-mt-24 text-body text-sm leading-relaxed"
-                          >
-                            {theme}
-                            {theme === "Lite PTA and pseudo skin" ? (
-                              <span id="pseudo-skin" />
-                            ) : null}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Platform connection */}
-      <section
-        aria-labelledby="platform-heading"
-        className="rule-bottom engineering-grid-fine"
-      >
-        <div className="container-site section-y">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-start lg:gap-16">
-            <div className="flex flex-col gap-4">
-              <EngineeringLabel>{platform.label}</EngineeringLabel>
-              <h2 id="platform-heading" className="text-h1 text-balance">
-                {platform.title}
-              </h2>
-              <p className="text-body-muted">{platform.description}</p>
-              <div className="pt-2">
-                <Button
-                  variant="outline"
-                  render={<Link href={platform.link.href} />}
-                  nativeButton={false}
-                  className="group/link"
-                >
-                  {platform.link.label}
-                  <ArrowRight
-                    aria-hidden="true"
-                    className="transition-transform duration-150 group-hover/link:translate-x-0.5"
-                  />
-                </Button>
+                ) : null}
               </div>
+
+              {wide && item.image ? (
+                <div className="relative mt-8 min-h-72 overflow-hidden sm:min-h-96">
+                  <Image
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    fill
+                    sizes="100vw"
+                    className="object-cover object-left-top"
+                  />
+                </div>
+              ) : null}
             </div>
-
-            {contextualVisual ? (
-              <ProductVisual
-                src={contextualVisual.src}
-                alt={contextualVisual.alt}
-              />
-            ) : null}
-          </div>
-        </div>
-      </section>
-
-      {/* Pilot CTA */}
-      <CtaBand
-        title={pilotCta.title}
-        description={pilotCta.description}
-        primary={pilotCta.primary}
-        secondary={pilotCta.secondary}
-      />
+          </section>
+        );
+      })}
     </main>
   );
 }

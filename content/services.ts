@@ -2,156 +2,107 @@ import type { ServicesContent } from "./types";
 
 export const services = {
   meta: {
-    title: "Engineering Services",
+    title: "Services",
     description:
-      "Production optimization, well surveillance, workflow automation, and XBM pilot support from ETE-Optimiza engineers.",
+      "Collaborative engineering services for upstream production optimization, well surveillance, diagnostics, and Exception-Based Monitoring (XBM).",
   },
   hero: {
-    eyebrow: "Engineering services",
-    title: "Engineering work alongside the surveillance platform.",
-    description:
-      "ETE-Optimiza engineers help operators diagnose well performance, set up surveillance, and put XBM into daily use.",
-    primaryCta: {
-      label: "Request an XBM Pilot",
-      href: "/contact?intent=pilot",
-    },
-    secondaryCta: {
-      label: "Discuss Your Field",
+    title: "Collaborative Services",
+    lede: "Let us work together!",
+    body: "We invite companies to partner with us in testing our Exception-Based Monitoring (XBM) Application. This tool has been designed to help organizations proactively diagnose oil well and asset issues. If you're interested, please use the Contact Form to reach out to us.",
+    cta: {
+      label: "Contact Us",
       href: "/contact",
     },
-  },
-  collaboration: {
-    label: "How we work",
-    title: "People and software, used together.",
-    paragraphs: [
-      "The services are the engineering work: diagnosis, surveillance setup, workflow automation, and pilot support. XBM is the software those engagements often run on.",
-      "Engineers stay in control. We help interpret surveillance results. Operational decisions remain with your engineering team.",
-    ],
-    principles: [
-      "Start from the field's wells, data, and current review practice",
-      "Configure the workflows with the engineers who will use them",
-      "Leave the team able to interpret the results",
-    ],
-  },
-  engagement: {
-    label: "Engagement model",
-    title: "A coherent path from field context to engineering review",
-    description:
-      "Engagements typically move from understanding surveillance needs through configuration, collaborative evaluation, and ongoing engineering review, whether supporting XBM deployment or standalone engineering analysis.",
-    phases: [
-      {
-        id: "discover",
-        label: "01",
-        title: "Understand field and workflow context",
-        description:
-          "Review well inventory, data availability, surveillance priorities, and how engineering teams currently identify wells requiring attention.",
-      },
-      {
-        id: "configure",
-        label: "02",
-        title: "Structure surveillance and analysis workflows",
-        description:
-          "Define operating limits, screening parameters, and engineering workflows appropriate to asset scope: exception-based monitoring, drawdown surveillance, PTA screening, or integrated combinations.",
-      },
-      {
-        id: "collaborate",
-        label: "03",
-        title: "Collaborate on evaluation and pilot use",
-        description:
-          "Work alongside client engineers to evaluate screening outputs, refine thresholds, and transfer knowledge on interpreting surveillance results within established engineering processes.",
-      },
-      {
-        id: "review",
-        label: "04",
-        title: "Support ongoing engineering review",
-        description:
-          "Stay available as the field and the surveillance questions change.",
-      },
-    ],
-  },
-  domains: {
-    label: "Services",
-    title: "Four ways we work with a field team",
-    description:
-      "Production optimization, surveillance and diagnostics, workflow automation, and XBM pilot support.",
-    items: [
-      {
-        id: "production-optimization",
-        name: "Production Optimization",
-        summary: "Find where well performance is constrained.",
-        detail:
-          "Identify where well performance is being constrained and focus engineering effort on the conditions with the greatest operational relevance.",
-        themes: [
-          "Well performance and bottlenecks",
-          "Operating strategy",
-          "Engineering review of optimization opportunities",
-        ],
-      },
-      {
-        id: "surveillance-diagnostics",
-        name: "Surveillance & Well Diagnostics",
-        summary: "Read the exceptions, then the well.",
-        detail:
-          "Operating envelope, sustainable drawdown, flux, Lite PTA, and pseudo skin, used as related surveillance work rather than separate products.",
-        themes: [
-          "Operating envelope and exception states",
-          "Drawdown versus production response",
-          "Flux and screen integrity",
-          "Lite PTA and pseudo skin",
-        ],
-      },
-      {
-        id: "workflow-automation",
-        name: "Workflow & Data Automation",
-        summary: "Cut the repetitive part of surveillance.",
-        detail:
-          "Structure the data, repeat the surveillance checks, and produce the reports engineers already ask for. AI-assisted interpretation can sit inside that workflow when it helps the review.",
-        themes: [
-          "Data handling and repeatable checks",
-          "Engineering reports",
-          "AI-assisted reading of surveillance results",
-        ],
-      },
-      {
-        id: "xbm-implementation",
-        name: "XBM Implementation & Pilot Support",
-        summary: "Put XBM to work on your wells.",
-        detail:
-          "Configure surveillance for the field, run a pilot with your engineers, and transfer how to interpret the results inside the existing workflow.",
-        themes: [
-          "Workflow configuration",
-          "Pilot collaboration",
-          "Interpretation and knowledge transfer",
-        ],
-      },
-    ],
-  },
-  platform: {
-    label: "XBM",
-    title: "Looking for the software platform?",
-    description: "Explore XBM for the product itself. These services are how ETE-Optimiza engineers work with you around it.",
-    link: {
-      label: "Explore XBM",
-      href: "/xbm",
-    },
-    note: "",
-  },
-  contextualVisual: {
-    id: "well-data",
-    src: "/assets/xbm/Well_Data.png",
-    alt: "Structured well data view showing production and pressure parameters used in engineering surveillance workflows",
-  },
-  pilotCta: {
-    title: "Request an XBM pilot",
-    description:
-      "Tell us about the field. We will look at whether a bounded XBM pilot fits the wells, the data, and the way your engineers review them.",
-    primary: {
-      label: "Request an XBM Pilot",
-      href: "/contact?intent=pilot",
-    },
-    secondary: {
-      label: "Partner With Us",
-      href: "/contact?intent=partnership",
+    image: {
+      src: "/assets/home/field-aerial.jpg",
+      alt: "Drilling rig and lease equipment in open terrain.",
     },
   },
+  offerings: [
+    {
+      id: "exception-based-monitoring",
+      title: "Exception-Based Monitoring",
+      paragraphs: [
+        "The XBM application enables organizations to automatically monitor their assets, alerting them to issues that require attention so they can proactively resolve problems and maximize asset value.",
+      ],
+      image: {
+        src: "/assets/hero/xbm-surveillance-base.png",
+        alt: "Technical visualization of monitored production wells and subsurface formations.",
+      },
+      cta: {
+        label: "Explore XBM",
+        href: "/xbm",
+      },
+    },
+    {
+      id: "operating-envelope",
+      title: "Operating Envelope",
+      paragraphs: [
+        "The operating envelope is the surveillance record for each well. It gives insight into well performance, highlights critical issues, and helps users plan interventions.",
+      ],
+      image: {
+        src: "/assets/xbm/operating_envelope.png",
+        alt: "Operating envelope view used to illustrate well surveillance.",
+      },
+    },
+    {
+      id: "sustainable-drawdown",
+      title: "Sustainable Drawdown",
+      paragraphs: [
+        "XBM uses temperature-derived rates or multiphase rates, together with real-time surveillance plots, to identify the maximum sustainable drawdown limit.",
+        "That limit is the point at which productivity decline accelerates. Operating limits can be identified dynamically rather than assumed as a fixed value.",
+      ],
+      image: {
+        src: "/assets/xbm/drawdown-2.png",
+        alt: "Drawdown view used to illustrate sustainable drawdown surveillance.",
+      },
+    },
+    {
+      id: "pressure-test-analysis",
+      title: "Pressure Test Analysis — At-a-Fly",
+      label: "Lite Pressure Transient Analysis (PTA)",
+      paragraphs: [
+        "Lite PTA supports surveillance and performance tracking. Long-term PTA remains the appropriate tool for reservoir characterization.",
+        "Objectives suited to Lite PTA include skin, near-wellbore damage, completion effectiveness, and productivity comparison before and after workovers.",
+      ],
+      image: {
+        src: "/assets/xbm/Lite_PTA.png",
+        alt: "Pressure-test view used to illustrate Lite PTA.",
+      },
+    },
+    {
+      id: "flux-analysis",
+      title: "Flux Analysis",
+      paragraphs: [
+        "Flux represents average velocity through the screen. It is treated as a risk factor for screen erosion. Drawdown alone is not a sufficient safety metric.",
+        "Flux monitoring supports both production optimization and well integrity. A change in the Flux trend is reviewed as an early indication, not as a prediction that a failure will occur.",
+      ],
+    },
+    {
+      id: "pseudo-skin",
+      title: "Pseudo Skin",
+      paragraphs: [
+        "Routine 1-hour, 24-hour, and 48-hour shut-ins, using high-quality downhole pressure data, support skin and productivity diagnostics.",
+        "The purpose is to assess skin and near-wellbore conditions and to compare productivity with the previous surveillance. Reservoir-boundary determination is not the purpose of these short tests.",
+      ],
+      image: {
+        src: "/assets/xbm/skin_mornitoring.png",
+        alt: "Skin monitoring view used to illustrate pseudo skin surveillance.",
+      },
+    },
+    {
+      id: "agentic-ai",
+      title: "Agentic AI for Well Diagnostics",
+      paragraphs: [
+        "This work is AI-assisted diagnostics. It reads real-time and historical well data and supports engineering review. It does not authorize operational interventions or take control of a well.",
+      ],
+      points: [
+        "Utilize AI-driven analytics to diagnose oil well performance issues by processing real-time and historical data",
+        "Integrate AI solutions with existing monitoring and control systems for seamless data flow and enhanced insight",
+        "Automate anomaly detection and root cause analysis to accelerate troubleshooting and optimize production",
+        "Leverage AI to recommend targeted interventions based on comprehensive data analysis and patterns",
+      ],
+    },
+  ],
 } satisfies ServicesContent;

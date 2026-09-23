@@ -261,3 +261,92 @@
     transform: scale(1.05);
   }
 }
+
+/* Light surface for company pages. Homepage and /xbm keep their own treatments. */
+.company-canvas {
+  --background: oklch(0.955 0.012 85);
+  --foreground: oklch(0.27 0.02 55);
+  --muted-foreground: oklch(0.4 0.018 55);
+  --card: oklch(0.975 0.008 85);
+  --card-foreground: oklch(0.27 0.02 55);
+  --primary: oklch(0.48 0.13 145);
+  --primary-foreground: oklch(0.98 0.01 95);
+  --accent: oklch(0.92 0.014 85);
+  --accent-foreground: oklch(0.27 0.02 55);
+  --border: oklch(0.27 0.02 55 / 14%);
+  --border-subtle: oklch(0.27 0.02 55 / 8%);
+  --input: oklch(0.27 0.02 55 / 18%);
+  --ring: oklch(0.48 0.13 145 / 45%);
+  --ete-green: oklch(0.46 0.13 145);
+  --company-stone: oklch(0.9 0.02 75);
+  --company-sage: oklch(0.93 0.028 145);
+  --company-sand: oklch(0.945 0.02 85);
+  --company-beige: oklch(0.925 0.024 78);
+  --company-olive: oklch(0.9 0.03 140);
+  color-scheme: light;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Cool technical surface for the XBM product page only. */
+.xbm-canvas {
+  --xbm-ink: oklch(0.24 0.032 228);
+  --xbm-slate: oklch(0.34 0.028 222);
+  --xbm-mist: oklch(0.945 0.012 232);
+  --xbm-cloud: oklch(0.9 0.016 226);
+  --xbm-paper: oklch(0.975 0.008 232);
+  --xbm-aqua: oklch(0.58 0.07 205);
+  --xbm-amber: oklch(0.72 0.12 75);
+  --foreground: oklch(0.24 0.03 230);
+  --muted-foreground: oklch(0.42 0.025 230);
+  --card: oklch(0.975 0.008 232);
+  --card-foreground: oklch(0.24 0.03 230);
+  --primary: oklch(0.46 0.13 145);
+  --primary-foreground: oklch(0.98 0.01 145);
+  --border: oklch(0.24 0.03 230 / 14%);
+  --border-subtle: oklch(0.24 0.03 230 / 8%);
+  --accent: oklch(0.92 0.015 226);
+  --accent-foreground: oklch(0.24 0.03 230);
+  --ring: oklch(0.46 0.13 145 / 45%);
+  --ete-green: oklch(0.46 0.13 145);
+  color-scheme: light;
+  background: var(--xbm-mist);
+  color: var(--foreground);
+}
+
+.xbm-ink {
+  --foreground: oklch(0.96 0.012 230);
+  --muted-foreground: oklch(0.8 0.02 230);
+  --border: oklch(0.96 0.012 230 / 18%);
+  --accent: oklch(0.96 0.012 230 / 8%);
+  --accent-foreground: oklch(0.96 0.012 230);
+  --primary: oklch(0.74 0.16 145);
+  --primary-foreground: oklch(0.16 0.04 150);
+  --ring: oklch(0.74 0.16 145 / 55%);
+  background: var(--xbm-ink);
+  color: var(--foreground);
+}
+
+.xbm-wrap {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+@keyframes xbm-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.xbm-pulse {
+  animation: xbm-pulse 2.2s ease-in-out 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xbm-pulse {
+    animation: none;
+  }
+}

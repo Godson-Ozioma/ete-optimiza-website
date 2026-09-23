@@ -68,35 +68,22 @@ export type CapabilityHighlight = {
   layout: "visual-left" | "visual-right";
 };
 
-export type XbmModuleEntry = ProductModule & {
-  anchor: string;
-};
-
-export type XbmExceptionState = {
-  status: ExceptionStatus;
-  description: string;
-};
-
-export type XbmCapabilitySection = {
+export type XbmModule = {
   id: string;
   anchor: string;
-  title: string;
+  name: string;
   summary: string;
-  paragraphs: readonly string[];
-  points?: readonly string[];
-  visual?: ProductVisualAsset;
-  layout: "visual-left" | "visual-right" | "text-only";
 };
 
-export type XbmSupportingCapability = {
+export type XbmField = {
+  name: string;
+  unit?: string;
+};
+
+export type XbmFieldGroup = {
   id: string;
-  anchor: string;
   title: string;
-  summary: string;
-  detail: string;
-  points?: readonly string[];
-  visual?: ProductVisualAsset;
-  emphasis: "primary" | "secondary" | "tertiary";
+  fields: readonly XbmField[];
 };
 
 export type XbmContent = {
@@ -105,68 +92,72 @@ export type XbmContent = {
     description: string;
   };
   hero: {
-    eyebrow: string;
-    title: string;
-    description: string;
+    name: string;
+    statement: string;
     primaryCta: CtaLink;
     secondaryCta: CtaLink;
-    visual: ProductVisualAsset;
+    image: PageImage;
   };
-  moduleIndex: {
-    label: string;
-    title: string;
-    description: string;
-    modules: readonly XbmModuleEntry[];
-  };
-  workflow: {
-    label: string;
-    title: string;
-    description: string;
-    sequence: string;
-    steps: readonly WorkflowStep[];
-  };
-  exceptionStates: {
-    label: string;
-    title: string;
-    description: string;
-    states: readonly XbmExceptionState[];
-  };
-  primaryCapabilities: {
-    label: string;
-    title: string;
-    description: string;
-    items: readonly XbmCapabilitySection[];
-  };
-  supportingCapabilities: {
-    label: string;
-    title: string;
-    description: string;
-    items: readonly XbmSupportingCapability[];
-  };
-  dataSources: {
-    label: string;
-    title: string;
-    description: string;
-    formats: readonly string[];
-    parameters?: readonly string[];
-  };
-  alertsReporting: {
-    label: string;
-    title: string;
-    description: string;
-    capabilities: readonly string[];
-  };
-  methodology: {
-    label: string;
+  modules: readonly XbmModule[];
+  dashboard: {
+    id: string;
     title: string;
     paragraphs: readonly string[];
-    principles: readonly string[];
+    features: readonly string[];
   };
-  pilotCta: {
+  wellData: {
+    id: string;
+    title: string;
+    intro: string;
+    date: XbmField;
+    groups: readonly XbmFieldGroup[];
+    imports: {
+      title: string;
+      paragraphs: readonly string[];
+      formats: readonly string[];
+    };
+  };
+  envelope: {
+    id: string;
+    title: string;
+    paragraphs: readonly string[];
+    parameters: readonly string[];
+    image: PageImage;
+  };
+  temperature: {
+    id: string;
+    title: string;
+    paragraphs: readonly string[];
+    flow: readonly string[];
+    image: PageImage;
+  };
+  drawdown: {
+    id: string;
+    title: string;
+    paragraphs: readonly string[];
+    image: PageImage;
+  };
+  flux: {
+    id: string;
+    title: string;
+    paragraphs: readonly string[];
+  };
+  pta: {
+    id: string;
+    title: string;
+    paragraphs: readonly string[];
+    objectives: readonly string[];
+  };
+  pseudoSkin: {
+    id: string;
+    title: string;
+    paragraphs: readonly string[];
+    windows: readonly string[];
+  };
+  pilot: {
     title: string;
     description: string;
     primary: CtaLink;
-    secondary: CtaLink;
   };
 };
 
@@ -185,50 +176,35 @@ export type ServiceArea = {
   themes?: readonly string[];
 };
 
+export type PageImage = {
+  src: string;
+  alt: string;
+};
+
+export type ServiceOffering = {
+  id: string;
+  title: string;
+  label?: string;
+  paragraphs: readonly string[];
+  points?: readonly string[];
+  parameters?: readonly string[];
+  image?: PageImage;
+  cta?: CtaLink;
+};
+
 export type ServicesContent = {
   meta: {
     title: string;
     description: string;
   };
   hero: {
-    eyebrow: string;
     title: string;
-    description: string;
-    primaryCta: CtaLink;
-    secondaryCta: CtaLink;
+    lede: string;
+    body: string;
+    cta: CtaLink;
+    image: PageImage;
   };
-  collaboration: {
-    label: string;
-    title: string;
-    paragraphs: readonly string[];
-    principles: readonly string[];
-  };
-  engagement: {
-    label: string;
-    title: string;
-    description: string;
-    phases: readonly EngagementPhase[];
-  };
-  domains: {
-    label: string;
-    title: string;
-    description: string;
-    items: readonly ServiceArea[];
-  };
-  platform: {
-    label: string;
-    title: string;
-    description: string;
-    link: CtaLink;
-    note: string;
-  };
-  contextualVisual?: ProductVisualAsset;
-  pilotCta: {
-    title: string;
-    description: string;
-    primary: CtaLink;
-    secondary: CtaLink;
-  };
+  offerings: readonly ServiceOffering[];
 };
 
 export type AboutContent = {
@@ -237,47 +213,32 @@ export type AboutContent = {
     description: string;
   };
   hero: {
-    eyebrow: string;
     title: string;
-    description: string;
+    support: string;
+    body: string;
+    image: PageImage;
   };
-  positioning: {
-    label: string;
+  mission: {
     title: string;
-    paragraphs: readonly string[];
+    text: string;
   };
-  missionVision: {
-    mission: { label: string; text: string };
-    vision: { label: string; text: string };
+  vision: {
+    title: string;
+    text: string;
   };
   company: {
-    founded: number;
-    location: string;
-    industry: string;
-    expertiseNote: string;
-  };
-  values: {
-    label: string;
-    title: string;
-    sequence: readonly string[];
-    description: string;
-  };
-  leadership: {
-    label: string;
-    title: string;
-    description: string;
-    members: readonly LeadershipMember[];
-  };
-  collaboration: {
-    label: string;
     title: string;
     paragraphs: readonly string[];
+    offerings: readonly string[];
+    link: CtaLink;
   };
-  contactCta: {
+  values: {
     title: string;
-    description: string;
-    primary: CtaLink;
-    secondary: CtaLink;
+    sequence: readonly string[];
+  };
+  leadership: {
+    title: string;
+    members: readonly LeadershipMember[];
   };
 };
 
@@ -294,21 +255,29 @@ export type ProjectsContent = {
     description: string;
   };
   hero: {
-    eyebrow: string;
     title: string;
-    description: string;
+    sentence: string;
+    image: PageImage;
   };
-  evolution: {
-    label: string;
-    title: string;
+  poStudio: {
+    year: string;
+    name: string;
     description: string;
+    features: readonly string[];
+    useCases: readonly string[];
+    image: PageImage;
   };
-  timeline: readonly ProjectTimelineEntry[];
-  contactCta: {
-    title: string;
+  flowIq: {
+    year: string;
+    name: string;
     description: string;
-    primary: CtaLink;
-    secondary: CtaLink;
+    link: CtaLink;
+    image: PageImage;
+  };
+  optimech: {
+    name: string;
+    status: string;
+    image: PageImage;
   };
 };
 

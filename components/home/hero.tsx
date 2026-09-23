@@ -23,7 +23,7 @@ export function Hero() {
 
       <div className="container-site relative flex min-h-[88svh] items-end py-16 sm:py-20 lg:items-center lg:py-24">
         <div className="flex max-w-3xl flex-col gap-6">
-          <p className="text-sm font-medium text-white/80">ETE-Optimiza</p>
+          <p className="text-sm font-medium text-[oklch(0.78_0.22_142)]">ETE-Optimiza</p>
           <h1 id="hero-heading" className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.12]">
             {hero.title}
           </h1>

@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 
 import { ContactForm } from "@/components/contact-form";
 import { EngineeringLabel } from "@/components/engineering-label";
-import {
-  contactPage,
-  resolveContactIntent,
-} from "@/content/contact";
+import { contactPage } from "@/content/contact";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -18,13 +15,7 @@ export const metadata: Metadata = {
   },
 };
 
-type ContactPageProps = {
-  searchParams: Promise<{ intent?: string }>;
-};
-
-export default async function ContactPage({ searchParams }: ContactPageProps) {
-  const params = await searchParams;
-  const intent = resolveContactIntent(params.intent);
+export default function ContactPage() {
   const { hero, details } = contactPage;
   const address = `${details.address.street}, ${details.address.city}, ${details.address.state} ${details.address.postalCode}`;
 
@@ -70,7 +61,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             </div>
 
             <div className="border border-border-subtle bg-surface p-5 sm:p-8">
-              <ContactForm initialIntent={intent} />
+              <ContactForm />
             </div>
           </div>
         </div>

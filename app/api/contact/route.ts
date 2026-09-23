@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-import { contactIntents } from "@/content/contact";
 import { contact } from "@/content/site";
 import { contactFormSchema } from "@/lib/contact-schema";
 
@@ -8,12 +7,6 @@ const MAX_BODY_BYTES = 20_000;
 
 function escapeText(value: string): string {
   return value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, "");
-}
-
-function formatIntent(value: string): string {
-  return (
-    contactIntents.find((intent) => intent.value === value)?.label ?? value
-  );
 }
 
 async function verifyTurnstile(token: string | undefined): Promise<boolean> {
@@ -100,7 +93,6 @@ export async function POST(request: Request) {
     if (!isProduction) {
       console.info("[contact] RESEND_API_KEY is not configured. Submission:", {
         to,
-        intent: data.intent,
         email: data.email,
       });
       return NextResponse.json(
@@ -122,9 +114,8 @@ export async function POST(request: Request) {
     );
   }
 
-  const subject = `ETE-Optimiza website: ${formatIntent(data.intent)}`;
+  const subject = "ETE-Optimiza website message";
   const text = [
-    `Intent: ${formatIntent(data.intent)}`,
     `Name: ${escapeText(data.firstName)} ${escapeText(data.lastName)}`,
     `Email: ${escapeText(data.email)}`,
     `Phone: ${escapeText(data.phone || "-")}`,

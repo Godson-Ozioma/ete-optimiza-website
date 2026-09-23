@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -11,35 +11,25 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  contactIntents,
-  contactPage,
-  type ContactIntentValue,
-} from "@/content/contact";
+import { contactPage } from "@/content/contact";
 import {
   contactFormSchema,
   type ContactFieldErrors,
 } from "@/lib/contact-schema";
-import { cn } from "@/lib/utils";
 
 const fieldClassName =
   "h-10 rounded-md border-border bg-background text-foreground md:text-sm";
 
-type ContactFormProps = {
-  initialIntent?: ContactIntentValue;
-};
-
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
-export function ContactForm({ initialIntent = "general" }: ContactFormProps) {
-  const [intent, setIntent] = useState<ContactIntentValue>(initialIntent);
+export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errors, setErrors] = useState<ContactFieldErrors>({});
   const [serverError, setServerError] = useState<string | null>(null);
 
   const errorSummary = useMemo(() => Object.values(errors)[0], [errors]);
 
-  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setServerError(null);
 
@@ -51,7 +41,6 @@ export function ContactForm({ initialIntent = "general" }: ContactFormProps) {
       email: String(formData.get("email") ?? ""),
       phone: String(formData.get("phone") ?? ""),
       company: String(formData.get("company") ?? ""),
-      intent,
       message: String(formData.get("message") ?? ""),
       website: String(formData.get("website") ?? ""),
     };
@@ -96,7 +85,6 @@ export function ContactForm({ initialIntent = "general" }: ContactFormProps) {
       }
 
       form.reset();
-      setIntent(initialIntent);
       setStatus("success");
     } catch {
       setServerError(
@@ -108,7 +96,7 @@ export function ContactForm({ initialIntent = "general" }: ContactFormProps) {
 
   return (
     <form
-      className="flex flex-col gap-6"
+      className="flex flex-col gap-4"
       onSubmit={onSubmit}
       noValidate
     >
@@ -191,37 +179,13 @@ export function ContactForm({ initialIntent = "general" }: ContactFormProps) {
           </Field>
         </div>
 
-        <Field data-invalid={errors.intent ? true : undefined}>
-          <FieldLabel htmlFor="intent">Intent</FieldLabel>
-          <select
-            id="intent"
-            name="intent"
-            value={intent}
-            onChange={(event) =>
-              setIntent(event.target.value as ContactIntentValue)
-            }
-            aria-invalid={Boolean(errors.intent)}
-            className={cn(
-              fieldClassName,
-              "w-full min-w-0 px-2.5 text-sm outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50",
-            )}
-          >
-            {contactIntents.map((item) => (
-              <option key={item.value} value={item.value}>
-                {item.label}
-              </option>
-            ))}
-          </select>
-          <FieldError>{errors.intent}</FieldError>
-        </Field>
-
         <Field data-invalid={errors.message ? true : undefined}>
           <FieldLabel htmlFor="message">Message</FieldLabel>
           <Textarea
             id="message"
             name="message"
             required
-            rows={6}
+            rows={4}
             aria-invalid={Boolean(errors.message)}
             className="min-h-32 rounded-md border-border bg-background text-foreground"
           />
@@ -229,19 +193,10 @@ export function ContactForm({ initialIntent = "general" }: ContactFormProps) {
         </Field>
       </FieldGroup>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <div>
         <Button type="submit" size="lg" disabled={status === "submitting"}>
           {status === "submitting" ? "Sending…" : "Send message"}
         </Button>
-        <p className="text-caption">
-          Or email{" "}
-          <a
-            href={`mailto:${contactPage.fallbackEmail}`}
-            className="text-foreground underline-offset-4 hover:underline focus-ring rounded-sm"
-          >
-            {contactPage.fallbackEmail}
-          </a>
-        </p>
       </div>
 
       <div aria-live="polite" className="min-h-6">

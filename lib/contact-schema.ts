@@ -1,12 +1,5 @@
 import { z } from "zod";
 
-import { contactIntents } from "@/content/contact";
-
-const intentValues = contactIntents.map((intent) => intent.value) as [
-  (typeof contactIntents)[number]["value"],
-  ...(typeof contactIntents)[number]["value"][],
-];
-
 export const contactFormSchema = z.object({
   firstName: z
     .string()
@@ -26,7 +19,6 @@ export const contactFormSchema = z.object({
     .max(254, "Email is too long."),
   phone: z.string().trim().max(40, "Phone number is too long.").optional(),
   company: z.string().trim().max(120, "Company name is too long.").optional(),
-  intent: z.enum(intentValues),
   message: z
     .string()
     .trim()

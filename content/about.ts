@@ -1,76 +1,55 @@
-import { companyValues, contact, leadership, mission, site, vision } from "./site";
+import { companyValues, leadership } from "./site";
 import type { AboutContent } from "./types";
 
 export const about = {
   meta: {
     title: "About",
     description:
-      "Founded in 2020 in Richmond, Texas, ETE-Optimiza combines petroleum-engineering expertise with software development for upstream production optimization and well surveillance.",
+      "ETE-Optimiza is a technology firm established in 2020 in Richmond, Texas, working on upstream production optimization.",
   },
   hero: {
-    eyebrow: "Company",
-    title: "An engineering technology company for upstream production optimization.",
-    description:
-      "ETE-Optimiza develops software and engineering solutions intended to improve well surveillance, production optimization, engineering workflows, and operational decision support in upstream oil and gas.",
-  },
-  positioning: {
-    label: "Who we are",
-    title: "Petroleum engineering expertise paired with software development",
-    paragraphs: [
-      "ETE-Optimiza is an upstream oil and gas production optimization technology and engineering services company. The team combines petroleum-engineering expertise with software development and automation to deliver tools and insights that support better engineering decisions.",
-      "Safety, efficiency, innovation, and engineering judgement remain central to how the company operates. ETE-Optimiza seeks to help clients achieve stronger operational performance while contributing to a sustainable energy future.",
-    ],
-  },
-  missionVision: {
-    mission: {
-      label: "Mission",
-      text: mission,
+    title: "We Keep Our Promises",
+    support: "Production Optimization by ETE-Optimiza",
+    body: "At ETE-Optimiza, we don't just make promises; we deliver results that reflect our dedication and hard work. Our commitment to excellence drives us to provide exceptional services that help our clients achieve their goals. With a skilled team of experts in petroleum engineering and production technology and a proven track record of success, we support our clients at every stage, ensuring that our actions align with our commitments. We take pride in our integrity, transparency, and the strong relationships we build, proving that when it comes to your success, we truly follow through.",
+    image: {
+      src: "/assets/home/rig-worker.jpg",
+      alt: "Field worker beside a drilling rig.",
     },
-    vision: {
-      label: "Vision",
-      text: vision,
-    },
+  },
+  mission: {
+    title: "Our Mission",
+    text: "Our mission is to deliver optimization solutions that maximize performance and efficiency in the upstream oil and gas sector. As a cutting-edge technology company, we draw on more than thirty years of experience and pioneering technology to streamline production processes. We are committed to equipping our clients with innovative strategies that drive operational excellence and foster a culture of safety. Through our deep expertise and unwavering dedication, we empower clients with the tools and insights necessary to achieve their objectives.",
+  },
+  vision: {
+    title: "Our Vision",
+    text: "We aspire to be recognized as the preeminent authority in optimization solutions within the upstream oil and gas sector. By placing a strong emphasis on innovation, efficiency, and execution, we are committed to refining our methodologies and enabling our clients to achieve exceptional levels of performance and resilience in the dynamic energy landscape. Our overarching objective is to foster a sustainable future while delivering exceptional value to our clients, employees, and the broader community.",
   },
   company: {
-    founded: site.founded,
-    location: site.location,
-    industry: site.industry,
-    expertiseNote:
-      "The team draws on more than 30 years of combined industry experience in petroleum engineering, production optimization, and software development.",
+    title: "Our Company",
+    paragraphs: [
+      "ETE-Optimiza is a technology firm that was established in 2020. We specialize in production optimization technologies specifically designed for the oil, gas, and renewable energy sectors. Our solutions are tailored to meet the unique needs of our clients.",
+      "Our product offerings include tools for production optimization, collaboration, automation of pressure transient analysis, short-term production forecasting, and well engineering reporting.",
+      "We create customized tools that automate workflows for petroleum and production engineers, helping to unlock well potential and improve production efficiency.",
+    ],
+    offerings: [
+      "Production optimization",
+      "Collaboration",
+      "Pressure transient analysis automation",
+      "Short-term production forecasting",
+      "Well engineering reporting",
+      "Engineering workflow automation",
+    ],
+    link: {
+      label: "Services Page",
+      href: "/services",
+    },
   },
   values: {
-    label: "Values",
-    title: "Honesty → Integrity → Innovation → Collaboration",
+    title: "Company Values",
     sequence: companyValues,
-    description:
-      "These values guide how ETE-Optimiza builds software, engages with engineering teams, and approaches production optimization work.",
   },
   leadership: {
-    label: "Leadership",
-    title: "Founding team",
-    description: "ETE-Optimiza is led by its co-founders.",
+    title: "Our Leadership Team",
     members: leadership,
   },
-  collaboration: {
-    label: "Engineering judgement",
-    title: "Collaboration built into how we work",
-    paragraphs: [
-      "ETE-Optimiza develops XBM as an engineering workflow and surveillance platform, not a system that replaces petroleum engineers. Screening outputs, exception alerts, and recommendations are presented for engineer review; operational decisions remain with qualified engineering staff.",
-      "The company emphasizes knowledge transfer between its engineers and client teams, reducing repetitive surveillance work while preserving engineering judgement in every engagement.",
-    ],
-  },
-  contactCta: {
-    title: "Get in touch",
-    description:
-      "Reach ETE-Optimiza to discuss production optimization, engineering services, or XBM collaboration. The team is available Monday–Friday, 8:00 am–5:00 pm CST.",
-    primary: {
-      label: "Contact Us",
-      href: "/contact",
-    },
-    secondary: {
-      label: "Request a Pilot",
-      href: "/contact?intent=pilot",
-    },
-  },
-  contact,
-} satisfies AboutContent & { readonly contact: typeof contact };
+} satisfies AboutContent;
