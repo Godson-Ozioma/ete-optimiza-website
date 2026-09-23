@@ -4,15 +4,15 @@ export const services = {
   meta: {
     title: "Engineering Services",
     description:
-      "Production optimization, exception-based surveillance, and engineering workflow support from ETE-Optimiza—combining petroleum-engineering expertise with software and automated screening.",
+      "Production optimization, well surveillance, workflow automation, and XBM pilot support from ETE-Optimiza engineers.",
   },
   hero: {
-    eyebrow: "Software & Engineering Services",
-    title: "Engineering collaboration for production optimization and surveillance.",
+    eyebrow: "Engineering services",
+    title: "Engineering work alongside the surveillance platform.",
     description:
-      "ETE-Optimiza pairs XBM platform development with hands-on engineering support. We work alongside petroleum and production engineers to structure surveillance workflows, interpret screening outputs, and improve decision support—without replacing engineering judgement.",
+      "ETE-Optimiza engineers help operators diagnose well performance, set up surveillance, and put XBM into daily use.",
     primaryCta: {
-      label: "Request a Pilot",
+      label: "Request an XBM Pilot",
       href: "/contact?intent=pilot",
     },
     secondaryCta: {
@@ -22,23 +22,22 @@ export const services = {
   },
   collaboration: {
     label: "How we work",
-    title: "Collaboration and engineering support—not a software handoff.",
+    title: "People and software, used together.",
     paragraphs: [
-      "Upstream production optimization requires both disciplined engineering analysis and practical workflow integration. ETE-Optimiza provides a combination of software and engineering services intended to improve well surveillance, production optimization, and operational decision support.",
-      "Our engineers contribute petroleum-engineering expertise alongside software development and automation. Knowledge transfer between ETE-Optimiza staff and client engineers is part of how engagements are structured—reducing repetitive surveillance work while keeping qualified staff responsible for operational decisions.",
+      "The services are the engineering work: diagnosis, surveillance setup, workflow automation, and pilot support. XBM is the software those engagements often run on.",
+      "Engineers stay in control. We help interpret surveillance results. Operational decisions remain with your engineering team.",
     ],
     principles: [
-      "Engineer-in-the-loop screening and recommendations",
-      "Collaborative workflow design aligned to field context",
-      "Integration with existing engineering processes and data",
-      "Decision support—not autonomous operational approval",
+      "Start from the field's wells, data, and current review practice",
+      "Configure the workflows with the engineers who will use them",
+      "Leave the team able to interpret the results",
     ],
   },
   engagement: {
     label: "Engagement model",
     title: "A coherent path from field context to engineering review",
     description:
-      "Engagements typically move from understanding surveillance needs through configuration, collaborative evaluation, and ongoing engineering review—whether supporting XBM deployment or standalone engineering analysis.",
+      "Engagements typically move from understanding surveillance needs through configuration, collaborative evaluation, and ongoing engineering review, whether supporting XBM deployment or standalone engineering analysis.",
     phases: [
       {
         id: "discover",
@@ -52,7 +51,7 @@ export const services = {
         label: "02",
         title: "Structure surveillance and analysis workflows",
         description:
-          "Define operating limits, screening parameters, and engineering workflows appropriate to asset scope—exception-based monitoring, drawdown surveillance, PTA screening, or integrated combinations.",
+          "Define operating limits, screening parameters, and engineering workflows appropriate to asset scope: exception-based monitoring, drawdown surveillance, PTA screening, or integrated combinations.",
       },
       {
         id: "collaborate",
@@ -66,161 +65,88 @@ export const services = {
         label: "04",
         title: "Support ongoing engineering review",
         description:
-          "Provide continued engineering support and workflow refinement as conditions change. Screening outputs and recommendations remain subject to engineer validation before action.",
+          "Stay available as the field and the surveillance questions change.",
       },
     ],
   },
   domains: {
-    label: "Service domains",
-    title: "Production optimization and surveillance engineering",
+    label: "Services",
+    title: "Four ways we work with a field team",
     description:
-      "Approved service themes span surveillance workflows, engineering analysis, and workflow automation. Each domain supports screening and decision support—outputs require engineer validation.",
+      "Production optimization, surveillance and diagnostics, workflow automation, and XBM pilot support.",
     items: [
       {
         id: "production-optimization",
         name: "Production Optimization",
-        summary: "Integrated well-performance diagnostics and optimization screening.",
+        summary: "Find where well performance is constrained.",
         detail:
-          "Engineering support for diagnosing performance changes, comparing productivity indicators, and screening wells where operating conditions may warrant review—grounded in production-engineering fundamentals rather than generic reporting.",
+          "Identify where well performance is being constrained and focus engineering effort on the conditions with the greatest operational relevance.",
         themes: [
-          "Well-performance diagnostics",
-          "Production trend interpretation",
-          "Optimization screening for engineer review",
+          "Well performance and bottlenecks",
+          "Operating strategy",
+          "Engineering review of optimization opportunities",
         ],
       },
       {
-        id: "exception-based-monitoring",
-        name: "Exception-Based Surveillance",
-        summary: "Continuous monitoring that prioritizes abnormal conditions.",
+        id: "surveillance-diagnostics",
+        name: "Surveillance & Well Diagnostics",
+        summary: "Read the exceptions, then the well.",
         detail:
-          "Structured surveillance workflows that identify exceptions and abnormal trends across well inventories, helping engineers focus review on conditions that warrant attention rather than scanning every chart.",
+          "Operating envelope, sustainable drawdown, flux, Lite PTA, and pseudo skin, used as related surveillance work rather than separate products.",
         themes: [
-          "Proactive identification of abnormal well conditions",
-          "Exception alerts and monitoring indicators",
-          "Prioritization for engineering follow-up",
-        ],
-      },
-      {
-        id: "operating-envelope",
-        name: "Operating Envelope Surveillance",
-        summary: "Per-well monitoring against defined operating limits.",
-        detail:
-          "Engineering support for configuring and interpreting operating-envelope surveillance—warning and critical states, threshold context, and live monitoring of parameters such as rates, choke, pressures, and wellbore indicators.",
-        themes: [
-          "Limit-based surveillance configuration",
-          "Warning and critical state interpretation",
-          "Live operating-envelope updates",
-        ],
-      },
-      {
-        id: "sustainable-drawdown",
-        name: "Sustainable Drawdown Analysis",
-        summary: "Dynamic drawdown surveillance and production-response screening.",
-        detail:
-          "Analysis to identify operating conditions where increasing drawdown stops producing a proportionate production benefit or begins indicating increased risk—presented as dynamic engineering surveillance, not a single static limit or autonomous setpoint.",
-        themes: [
+          "Operating envelope and exception states",
           "Drawdown versus production response",
-          "Changing production efficiency screening",
-          "Edge-of-performance condition identification",
-        ],
-      },
-      {
-        id: "pressure-transient-analysis",
-        name: "Pressure Transient Analysis",
-        summary: "Short-duration PTA workflows for routine surveillance.",
-        detail:
-          "Short-term and lite pressure-transient-analysis support for skin assessment, near-wellbore damage screening, completion effectiveness, and productivity comparison using routine shut-in windows—outputs are screening results requiring engineer validation.",
-        themes: [
-          "Skin and near-wellbore screening",
-          "Before/after workover comparison",
-          "Short-duration surveillance shut-ins",
-        ],
-      },
-      {
-        id: "flux-analysis",
-        name: "Flux & Integrity Surveillance",
-        summary: "Sand-control and screen-integrity monitoring using flux indicators.",
-        detail:
-          "Flux surveillance as an additional engineering indicator for sand-control and screen-integrity monitoring—drawdown alone is not sufficient; flux provides complementary integrity-related screening alongside rate and pressure-loss behavior.",
-        themes: [
-          "Flux over time and step-change screening",
-          "Sand-indicator context",
-          "Screen-integrity engineering indicators",
-        ],
-      },
-      {
-        id: "pseudo-skin",
-        name: "Pseudo Skin Surveillance",
-        summary: "Routine shut-in based skin and productivity monitoring.",
-        detail:
-          "Monitoring of skin and near-wellbore productivity changes using short-duration shut-in data—supporting comparison against previous surveillance without replacing conventional long-duration pressure-transient analysis.",
-        themes: [
-          "Skin and productivity trend screening",
-          "Near-wellbore condition monitoring",
-          "Routine shut-in surveillance windows",
+          "Flux and screen integrity",
+          "Lite PTA and pseudo skin",
         ],
       },
       {
         id: "workflow-automation",
-        name: "Engineering Workflow Automation",
-        summary: "Automation of repetitive surveillance and reporting tasks.",
+        name: "Workflow & Data Automation",
+        summary: "Cut the repetitive part of surveillance.",
         detail:
-          "Workflow automation that reduces repetitive engineering work—structured data handling, automated screening, and engineering reporting integrated with surveillance outputs to support faster review cycles.",
+          "Structure the data, repeat the surveillance checks, and produce the reports engineers already ask for. AI-assisted interpretation can sit inside that workflow when it helps the review.",
         themes: [
-          "Repetitive task reduction",
-          "Engineering reporting workflows",
-          "Integration with client engineering processes",
+          "Data handling and repeatable checks",
+          "Engineering reports",
+          "AI-assisted reading of surveillance results",
         ],
       },
       {
-        id: "ai-assisted-diagnostics",
-        name: "AI-Assisted Diagnostics",
-        summary: "AI-assisted analysis integrated with surveillance workflows.",
+        id: "xbm-implementation",
+        name: "XBM Implementation & Pilot Support",
+        summary: "Put XBM to work on your wells.",
         detail:
-          "AI-assisted well diagnostics and natural-language engineering workflows that support interpretation of surveillance outputs. Automated screening and decision support—never autonomous reservoir or production engineering.",
+          "Configure surveillance for the field, run a pilot with your engineers, and transfer how to interpret the results inside the existing workflow.",
         themes: [
-          "AI-assisted analysis",
-          "Natural-language engineering workflows",
-          "Automated screening for engineer review",
-        ],
-      },
-      {
-        id: "production-surveillance",
-        name: "Production Surveillance",
-        summary: "Live monitoring and engineering decision support across asset scope.",
-        detail:
-          "Production surveillance spanning field and asset scope—live monitoring, exception alerts, configurable thresholds, and engineering decision support that helps teams maintain structured oversight of well performance.",
-        themes: [
-          "Live monitoring and exception alerts",
-          "Field and asset-scope surveillance",
-          "Engineering decision support",
+          "Workflow configuration",
+          "Pilot collaboration",
+          "Interpretation and knowledge transfer",
         ],
       },
     ],
   },
   platform: {
-    label: "XBM platform",
-    title: "Software that carries surveillance into daily engineering practice",
-    description:
-      "Many service engagements connect to XBM—the exception-based well surveillance platform ETE-Optimiza develops. XBM ingests well data, monitors parameters, identifies exceptions, supports diagnosis, and presents recommendations for engineer review.",
+    label: "XBM",
+    title: "Looking for the software platform?",
+    description: "Explore XBM for the product itself. These services are how ETE-Optimiza engineers work with you around it.",
     link: {
-      label: "Explore the XBM platform",
+      label: "Explore XBM",
       href: "/xbm",
     },
-    note: "Services complement the platform: ETE-Optimiza engineers help teams configure workflows, interpret screening outputs, and integrate surveillance into established engineering processes.",
+    note: "",
   },
   contextualVisual: {
     id: "well-data",
     src: "/assets/xbm/Well_Data.png",
     alt: "Structured well data view showing production and pressure parameters used in engineering surveillance workflows",
-    caption: "Well Data Book — product context for engineering surveillance services",
   },
   pilotCta: {
-    title: "Collaborate on an XBM pilot",
+    title: "Request an XBM pilot",
     description:
-      "ETE-Optimiza invites operators and engineering teams to explore exception-based surveillance with XBM. Discuss your field, review engineering workflows, and evaluate fit for your production optimization needs.",
+      "Tell us about the field. We will look at whether a bounded XBM pilot fits the wells, the data, and the way your engineers review them.",
     primary: {
-      label: "Request a Pilot",
+      label: "Request an XBM Pilot",
       href: "/contact?intent=pilot",
     },
     secondary: {

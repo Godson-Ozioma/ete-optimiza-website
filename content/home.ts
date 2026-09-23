@@ -4,13 +4,13 @@ export const home = {
   meta: {
     title: "Production Optimization Technology",
     description:
-      "ETE-Optimiza combines petroleum-engineering expertise with XBM, an exception-based well surveillance platform for production optimization and engineering decision support.",
+      "ETE-Optimiza builds XBM, exception-based well surveillance for petroleum and production engineers, and provides the engineering services around it.",
   },
   hero: {
     eyebrow: "Exception-Based Production Surveillance",
     title: "Production surveillance that tells engineers where to look first.",
     description:
-      "XBM is an engineering workflow platform for petroleum and production engineers. It monitors well data, identifies exceptions, supports diagnosis, and helps prioritize wells that require attention—so review starts with the right conditions, not every chart.",
+      "XBM monitors well performance, surfaces exceptions, and helps petroleum engineers focus on the wells that need attention before they spend hours reviewing every chart.",
     primaryCta: {
       label: "Request a Pilot",
       href: "/contact?intent=pilot",
@@ -20,10 +20,9 @@ export const home = {
       href: "/xbm",
     },
     visual: {
-      id: "dashboard",
-      src: "/assets/xbm/dashboard.png",
-      alt: "XBM dashboard showing field performance overview, well navigation, and exception status indicators",
-      caption: "XBM Dashboard",
+      id: "surveillance",
+      src: "/assets/hero/xbm-surveillance-base.png",
+      alt: "Technical visualization of monitored production wells and subsurface formations.",
     },
   },
   problem: {
@@ -31,20 +30,19 @@ export const home = {
     title: "Too much data. Not enough engineering signal.",
     paragraphs: [
       "Production teams monitor rates, pressures, drawdown, skin, and operating limits across growing well inventories. Dashboards accumulate charts, but engineers still need to decide which wells deserve review first.",
-      "Exception-based surveillance is meant to invert that burden: surface abnormal conditions, support diagnosis, and prioritize attention—without replacing petroleum-engineering judgement.",
+      "Exception-based surveillance surfaces the abnormal conditions first, so review starts with the wells that need it.",
     ],
     points: [
       "Well inventories outpace routine review capacity",
-      "Multiple parameters must be read together, not in isolation",
-      "Screening outputs require engineer validation before action",
-      "Integrated workflows beat disconnected spreadsheets and alerts",
+      "Rates, pressures, drawdown, and skin need to be read together",
+      "A short list of exceptions beats another dashboard of charts",
     ],
   },
   workflow: {
     label: "How XBM works",
-    title: "From data ingestion to engineer review",
+    title: "From well data to a short review list",
     description:
-      "XBM connects surveillance, diagnosis, and prioritization into one engineering workflow. Recommendations are presented for review—the engineer remains responsible for operational decisions.",
+      "XBM imports well data, watches the parameters that matter, and ranks the wells that need a closer look.",
     sequence: "DATA → MONITOR → DETECT → DIAGNOSE → PRIORITIZE → ENGINEER REVIEW",
     steps: [
       {
@@ -52,7 +50,7 @@ export const home = {
         label: "DATA",
         title: "Ingest well and production data",
         description:
-          "Access structured well history and live or near-live parameters from approved sources and formats.",
+          "Import well history and current rates, pressures, and related parameters.",
       },
       {
         id: "monitor",
@@ -73,7 +71,7 @@ export const home = {
         label: "DIAGNOSE",
         title: "Support engineering analysis",
         description:
-          "Apply integrated workflows—operating envelope, drawdown, PTA screening, and related calculations—to surface probable causes.",
+          "Apply integrated workflows: operating envelope, drawdown, PTA screening, and related calculations, to surface probable causes.",
       },
       {
         id: "prioritize",
@@ -85,19 +83,19 @@ export const home = {
       {
         id: "engineer-review",
         label: "ENGINEER REVIEW",
-        title: "Recommendations for validation",
+        title: "Show where to look next",
         description:
-          "Present insights and recommendations for petroleum-engineer review. XBM supports decision-making—it does not authorize operational changes.",
+          "Rank the wells and conditions that should be reviewed first.",
       },
     ],
     engineerNote:
-      "Engineer-in-the-loop by design: XBM screens, highlights, and recommends. Operational decisions stay with qualified engineering staff.",
+      "XBM surfaces exceptions, supports diagnosis, and helps engineers prioritize where to investigate next. Operational decisions remain with qualified engineering teams.",
   },
   platform: {
     label: "XBM platform",
     title: "One connected surveillance platform",
     description:
-      "XBM combines dashboard overview, structured well data, operating-envelope monitoring, drawdown surveillance, PTA screening, and integrated recommendations into a single engineering environment—not a generic charting tool.",
+      "Dashboard, well history, operating envelope, drawdown, and Lite PTA sit in one surveillance workflow.",
     link: {
       label: "Explore the XBM platform",
       href: "/xbm",
@@ -106,72 +104,63 @@ export const home = {
       id: "operating-envelope",
       src: "/assets/xbm/operating_envelope.png",
       alt: "Operating envelope surveillance view with per-well limit monitoring",
-      caption: "Operating Envelope",
     },
   },
   capabilities: {
     label: "Engineering capabilities",
     title: "Surveillance workflows built for production engineers",
     description:
-      "A focused set of integrated modules for exception-based monitoring, operating-limit surveillance, and engineering screening.",
+      "Four workflows cover the questions production engineers ask most often.",
     items: [
       {
         id: "operating-envelope",
         title: "Operating Envelope",
-        summary:
-          "Per-well surveillance against defined operating limits with warning and critical states.",
+        summary: "See when a well moves outside its limits.",
         detail:
-          "Monitor parameters such as rates, choke, tubing-head pressure, gas-lift injection, pseudo skin, and wellbore gradient. Gauges, surveillance plots, and live updates help engineers see when conditions move outside expected ranges.",
+          "Track rates, choke, tubing-head pressure, gas-lift injection, pseudo skin, and wellbore gradient against the limits set for that well.",
         visual: {
           id: "operating-envelope",
           src: "/assets/xbm/operating_envelope.png",
           alt: "Operating envelope surveillance view with per-well limit monitoring and status indicators",
-          caption: "Operating Envelope",
         },
         layout: "visual-right",
       },
       {
         id: "sustainable-drawdown",
         title: "Maximum Sustainable Drawdown",
-        summary:
-          "Dynamic drawdown surveillance—not a single static limit.",
+        summary: "See when more drawdown stops delivering more production.",
         detail:
-          "Identify operating conditions where increasing drawdown stops producing a proportionate production benefit or begins indicating increased risk. Supports screening for changing production efficiency and the edge of effective operating performance.",
+          "XBM compares drawdown with production response so engineers can see the edge of useful operating performance.",
         visual: {
           id: "drawdown",
           src: "/assets/xbm/drawdown-2.png",
           alt: "Maximum sustainable drawdown analysis view with drawdown versus production response",
-          caption: "Maximum Sustainable Drawdown",
         },
         layout: "visual-left",
       },
       {
         id: "lite-pta",
-        title: "Short-Term / Lite PTA",
-        summary:
-          "Short-duration pressure-transient analysis for routine surveillance.",
+        title: "Lite PTA",
+        summary: "Screen near-wellbore changes from routine shut-ins.",
         detail:
-          "Screen skin, near-wellbore damage, completion effectiveness, and productivity changes using short shut-in windows. Outputs are engineering screening results that require engineer validation—not long-duration reservoir characterization.",
+          "Lite PTA looks at skin, completion effectiveness, and productivity from short shut-in windows. Reservoir-boundary work still belongs to long-duration tests.",
         visual: {
           id: "lite-pta",
           src: "/assets/xbm/Lite_PTA.png",
-          alt: "Short-term pressure transient analysis workflow for skin and productivity screening",
-          caption: "Short-Term / Lite PTA",
+          alt: "Lite PTA workflow for skin and productivity screening",
         },
         layout: "visual-right",
       },
       {
         id: "integrated-surveillance",
         title: "Integrated Surveillance",
-        summary:
-          "Combined field and well health view across multiple workflows.",
+        summary: "See which wells need review now.",
         detail:
-          "Connect drawdown trends, skin screening, operating-envelope exceptions, and data-quality flags into exception summaries and engineering recommendations—helping teams answer which wells need review now.",
+          "Drawdown, skin, operating-envelope exceptions, and data gaps are read together so the field view points at specific wells.",
         visual: {
           id: "dashboard-integrated",
           src: "/assets/xbm/dashboard.png",
           alt: "Integrated surveillance dashboard with exception summaries and well health indicators",
-          caption: "Integrated Surveillance",
         },
         layout: "visual-left",
       },
@@ -179,23 +168,21 @@ export const home = {
   },
   credibility: {
     label: "Engineering credibility",
-    title: "Screening and decision support—not autonomous control",
+    title: "Built around how production engineers already work",
     paragraphs: [
-      "XBM is built for petroleum and production engineers who need faster, more structured surveillance—not a system that replaces engineering judgement.",
-      "The platform identifies exceptions, supports diagnosis with established workflows, and presents recommendations for review. It must not be described as independently authorizing operational changes.",
+      "The workflows use the same parameters engineers already compare: rates, pressures, drawdown, skin, and operating limits.",
     ],
     principles: [
-      "Exception-based surveillance over chart overload",
-      "Engineering workflows grounded in well-performance fundamentals",
-      "Screening outputs validated by qualified staff",
-      "Integrated analysis across drawdown, skin, limits, and data quality",
+      "Exceptions first, then the charts that explain them",
+      "Drawdown, skin, limits, and data quality read together",
+      "Same surveillance questions across the field, well by well",
     ],
   },
   services: {
     label: "Software and engineering expertise",
     title: "Technology backed by production-engineering experience",
     description:
-      "ETE-Optimiza develops XBM and provides engineering services for production optimization, surveillance workflows, and operational decision support.",
+      "ETE-Optimiza develops XBM and works with operators on production optimization, surveillance, and field implementation.",
     expertise:
       "The team draws on more than 30 years of combined industry experience in petroleum engineering, production optimization, and software development.",
     links: [
@@ -220,7 +207,7 @@ export const home = {
         year: 2026,
         name: "XBM",
         summary:
-          "Exception-based well surveillance platform that analyzes well data, identifies probable issues, alerts engineers to conditions requiring attention, and provides engineering recommendations for review.",
+          "Exception-based well surveillance that analyzes well data, identifies probable issues, and alerts engineers to the conditions that need attention.",
         status: "current",
       },
     ],

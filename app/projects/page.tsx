@@ -116,7 +116,7 @@ export default function ProjectsPage() {
 
                     {entry.features ? (
                       <div className="flex flex-col gap-3 pt-2">
-                        <p className="text-label">Approved capabilities</p>
+                        <p className="text-label">What it included</p>
                         <ul className="grid gap-px border border-border-subtle bg-border-subtle sm:grid-cols-2">
                           {entry.features.map((feature) => (
                             <li
@@ -168,7 +168,7 @@ export default function ProjectsPage() {
             <p className="text-body-muted leading-relaxed">
               PO-Studio established KPI visibility, collaborative review, and
               well performance analysis as core themes. XBM extends that direction
-              into integrated exception-based surveillance—analyzing well data,
+              into integrated exception-based surveillance, analyzing well data,
               identifying probable issues, and presenting engineering
               recommendations for review.
             </p>

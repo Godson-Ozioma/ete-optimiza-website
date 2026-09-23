@@ -55,7 +55,7 @@ export const about = {
     label: "Engineering judgement",
     title: "Collaboration built into how we work",
     paragraphs: [
-      "ETE-Optimiza develops XBM as an engineering workflow and surveillance platform—not a system that replaces petroleum engineers. Screening outputs, exception alerts, and recommendations are presented for engineer review; operational decisions remain with qualified engineering staff.",
+      "ETE-Optimiza develops XBM as an engineering workflow and surveillance platform, not a system that replaces petroleum engineers. Screening outputs, exception alerts, and recommendations are presented for engineer review; operational decisions remain with qualified engineering staff.",
       "The company emphasizes knowledge transfer between its engineers and client teams, reducing repetitive surveillance work while preserving engineering judgement in every engagement.",
     ],
   },

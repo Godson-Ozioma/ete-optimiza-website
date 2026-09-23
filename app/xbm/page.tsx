@@ -10,7 +10,7 @@ import { StatusIndicator } from "@/components/status-indicator";
 import { Button } from "@/components/ui/button";
 import { site } from "@/content/site";
 import { xbm } from "@/content/xbm";
-import type { XbmCapabilitySection, XbmSupportingCapability } from "@/content/types";
+import type { XbmCapabilitySection } from "@/content/types";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -80,7 +80,7 @@ function FluxConceptPanel({ capability }: { capability: XbmCapabilitySection }) 
                 Flux indicator
               </p>
               <p className="text-body text-sm leading-relaxed">
-                Flow velocity through effective screen area—an additional
+                Flow velocity through effective screen area, an additional
                 integrity-related engineering indicator for sand-control
                 surveillance.
               </p>
@@ -106,15 +106,6 @@ function FluxConceptPanel({ capability }: { capability: XbmCapabilitySection }) 
           </div>
         </div>
       </div>
-      <figcaption className="flex items-center gap-2 text-caption">
-        <span aria-hidden="true" className="font-mono text-data">
-          {"//"}
-        </span>
-        <span>
-          Conceptual diagram — sand-control and screen-integrity screening
-          relationships (not product interface)
-        </span>
-      </figcaption>
     </figure>
   );
 }
@@ -171,7 +162,6 @@ function PrimaryCapabilityBlock({
               <ProductVisual
                 src={capability.visual.src}
                 alt={capability.visual.alt}
-                caption={capability.visual.caption}
               />
             ) : null}
           </div>
@@ -214,125 +204,6 @@ function PrimaryCapabilityBlock({
   );
 }
 
-function SupportingPrimaryBlock({ item }: { item: XbmSupportingCapability }) {
-  return (
-    <article
-      id={item.anchor}
-      aria-labelledby={`support-${item.id}-heading`}
-      className={cn(
-        sectionAnchor,
-        "grid items-center gap-8 border-t border-border-subtle pt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-12 lg:pt-16",
-      )}
-    >
-      <div className="flex flex-col gap-4 lg:gap-5">
-        <EngineeringLabel>{item.title}</EngineeringLabel>
-        <h3 id={`support-${item.id}-heading`} className="text-h2 text-balance">
-          {item.summary}
-        </h3>
-        <p className="text-body-muted">{item.detail}</p>
-        {item.points ? (
-          <ul className="flex flex-col gap-2">
-            {item.points.map((point) => (
-              <li
-                key={point}
-                className="flex gap-3 border-t border-border-subtle pt-3 first:border-t-0 first:pt-0"
-              >
-                <span
-                  aria-hidden="true"
-                  className="mt-2 size-1.5 shrink-0 bg-ete-green"
-                />
-                <span className="text-body text-sm leading-relaxed">{point}</span>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-      </div>
-      {item.visual ? (
-        <ProductVisual
-          src={item.visual.src}
-          alt={item.visual.alt}
-          caption={item.visual.caption}
-        />
-      ) : null}
-    </article>
-  );
-}
-
-function SupportingSecondaryBlock({ item }: { item: XbmSupportingCapability }) {
-  return (
-    <article
-      id={item.anchor}
-      aria-labelledby={`support-${item.id}-heading`}
-      className={cn(sectionAnchor, "flex flex-col gap-5 border-t border-border-subtle pt-10 lg:pt-12")}
-    >
-      <div className="flex flex-col gap-3">
-        <EngineeringLabel>{item.title}</EngineeringLabel>
-        <h3 id={`support-${item.id}-heading`} className="text-h3 text-balance">
-          {item.summary}
-        </h3>
-        <p className="text-body-muted text-sm leading-relaxed">{item.detail}</p>
-      </div>
-      {item.points ? (
-        <ul className="flex flex-col gap-2 border-l border-border-subtle pl-4">
-          {item.points.map((point) => (
-            <li key={point} className="text-body text-sm leading-relaxed">
-              {point}
-            </li>
-          ))}
-        </ul>
-      ) : null}
-      {item.visual ? (
-        <ProductVisual
-          src={item.visual.src}
-          alt={item.visual.alt}
-          caption={item.visual.caption}
-          className="mt-2"
-        />
-      ) : null}
-    </article>
-  );
-}
-
-function SupportingTertiaryBlock({ item }: { item: XbmSupportingCapability }) {
-  return (
-    <article
-      id={item.anchor}
-      aria-labelledby={`support-${item.id}-heading`}
-      className={cn(
-        sectionAnchor,
-        "grid gap-6 border-t border-border-subtle py-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] sm:gap-8 lg:py-10",
-      )}
-    >
-      <div className="flex flex-col gap-3">
-        <EngineeringLabel>{item.title}</EngineeringLabel>
-        <h3 id={`support-${item.id}-heading`} className="text-h3 text-balance">
-          {item.summary}
-        </h3>
-        <p className="text-body-muted text-sm leading-relaxed">{item.detail}</p>
-        {item.points ? (
-          <ul className="mt-2 flex flex-col gap-1.5">
-            {item.points.map((point) => (
-              <li
-                key={point}
-                className="font-mono text-xs leading-relaxed text-data"
-              >
-                {point}
-              </li>
-            ))}
-          </ul>
-        ) : null}
-      </div>
-      {item.visual ? (
-        <ProductVisual
-          src={item.visual.src}
-          alt={item.visual.alt}
-          caption={item.visual.caption}
-        />
-      ) : null}
-    </article>
-  );
-}
-
 export default function XbmPage() {
   const {
     hero,
@@ -346,25 +217,6 @@ export default function XbmPage() {
     methodology,
     pilotCta,
   } = xbm;
-
-  const dashboard = supportingCapabilities.items.find(
-    (item) => item.id === "dashboard",
-  );
-  const wellDataBook = supportingCapabilities.items.find(
-    (item) => item.id === "well-data-book",
-  );
-  const temperatureRates = supportingCapabilities.items.find(
-    (item) => item.id === "temperature-derived-rates",
-  );
-  const pseudoSkin = supportingCapabilities.items.find(
-    (item) => item.id === "pseudo-skin",
-  );
-  const productionAggregation = supportingCapabilities.items.find(
-    (item) => item.id === "production-aggregation",
-  );
-  const integratedSurveillance = supportingCapabilities.items.find(
-    (item) => item.id === "integrated-surveillance",
-  );
 
   return (
     <main className="flex flex-1 flex-col">
@@ -408,7 +260,6 @@ export default function XbmPage() {
               <ProductVisual
                 src={hero.visual.src}
                 alt={hero.visual.alt}
-                caption={hero.visual.caption}
                 priority
                 className="w-full"
               />
@@ -417,50 +268,38 @@ export default function XbmPage() {
         </div>
       </section>
 
-      {/* Module index */}
-      <section
-        id="modules"
-        aria-labelledby="modules-heading"
-        className={cn(sectionAnchor, "rule-bottom bg-surface")}
-      >
-        <div className="container-site section-y">
-          <div className="flex flex-col gap-10 lg:gap-12">
-            <SectionHeading
-              label={moduleIndex.label}
-              title={moduleIndex.title}
-              description={moduleIndex.description}
-              className="max-w-3xl"
-              titleId="modules-heading"
-            />
+      <section id="modules" className="rule-bottom bg-surface">
+        <div className="container-site py-6 sm:py-8">
+          <nav aria-label="XBM workflows">
+            <ul className="flex flex-wrap gap-x-5 gap-y-3">
+              {[
+                "operating-envelope",
+                "maximum-sustainable-drawdown",
+                "flux-analysis",
+                "lite-pta",
+                "dashboard",
+                "well-data-book",
+                "temperature-derived-rates",
+                "pseudo-skin",
+                "production-aggregation",
+                "integrated-surveillance",
+              ].map((id) => {
+                const entry = moduleIndex.modules.find((item) => item.id === id);
+                if (!entry) return null;
 
-            <nav aria-label="XBM module index">
-              <ol className="grid gap-px border border-border-subtle bg-border-subtle sm:grid-cols-2 lg:grid-cols-3">
-                {moduleIndex.modules.map((module, index) => (
-                  <li key={module.id} className="bg-background">
+                return (
+                  <li key={entry.id}>
                     <Link
-                      href={`#${module.anchor}`}
-                      className="group/link flex h-full flex-col gap-2 p-4 sm:p-5 focus-ring hover:bg-surface-elevated/50"
+                      href={`#${entry.anchor}`}
+                      className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline focus-ring rounded-sm"
                     >
-                      <span className="flex items-center justify-between gap-2">
-                        <span className="font-mono text-xs uppercase tracking-widest text-ete-green">
-                          {module.name}
-                        </span>
-                        <span
-                          aria-hidden="true"
-                          className="font-mono text-xs text-muted-foreground tabular-nums"
-                        >
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                      </span>
-                      <span className="text-caption leading-relaxed group-hover/link:text-foreground">
-                        {module.summary}
-                      </span>
+                      {entry.name}
                     </Link>
                   </li>
-                ))}
-              </ol>
-            </nav>
-          </div>
+                );
+              })}
+            </ul>
+          </nav>
         </div>
       </section>
 
@@ -597,111 +436,118 @@ export default function XbmPage() {
               titleId="supporting-capabilities-heading"
             />
 
-            {dashboard ? <SupportingPrimaryBlock item={dashboard} /> : null}
+            <div className="flex flex-col">
+              {supportingCapabilities.items
+                .filter(
+                  (
+                    item,
+                  ): item is typeof item & {
+                    visual: NonNullable<(typeof item)["visual"]>;
+                  } => item.visual != null,
+                )
+                .map((item) => (
+                  <article
+                    key={item.id}
+                    id={item.anchor}
+                    aria-labelledby={`support-${item.id}-heading`}
+                    className={cn(
+                      sectionAnchor,
+                      "grid items-start gap-8 border-t border-border-subtle py-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12 lg:py-14",
+                    )}
+                  >
+                    <div className="flex flex-col gap-3">
+                      <EngineeringLabel>{item.title}</EngineeringLabel>
+                      <h3
+                        id={`support-${item.id}-heading`}
+                        className="text-h3 text-balance"
+                      >
+                        {item.summary}
+                      </h3>
+                      <p className="text-body-muted">{item.detail}</p>
+                    </div>
+                    <ProductVisual
+                      src={item.visual.src}
+                      alt={item.visual.alt}
+                    />
+                  </article>
+                ))}
 
-            <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-              {wellDataBook ? (
-                <SupportingSecondaryBlock item={wellDataBook} />
-              ) : null}
-              {temperatureRates ? (
-                <SupportingSecondaryBlock item={temperatureRates} />
-              ) : null}
+              <div className="grid border-t border-border-subtle md:grid-cols-2">
+                {supportingCapabilities.items
+                  .filter((item) => !item.visual)
+                  .map((item, index) => (
+                    <article
+                      key={item.id}
+                      id={item.anchor}
+                      aria-labelledby={`support-${item.id}-heading`}
+                      className={cn(
+                        sectionAnchor,
+                        "flex flex-col gap-3 py-10 lg:py-14",
+                        index > 0 &&
+                          "border-t border-border-subtle md:border-t-0 md:border-l md:pl-10 lg:pl-12",
+                        index === 0 && "md:pr-10 lg:pr-12",
+                      )}
+                    >
+                      <EngineeringLabel>{item.title}</EngineeringLabel>
+                      <h3
+                        id={`support-${item.id}-heading`}
+                        className="text-h3 text-balance"
+                      >
+                        {item.summary}
+                      </h3>
+                      <p className="text-body-muted">{item.detail}</p>
+                    </article>
+                  ))}
+              </div>
             </div>
-
-            {pseudoSkin ? <SupportingTertiaryBlock item={pseudoSkin} /> : null}
-            {productionAggregation ? (
-              <SupportingTertiaryBlock item={productionAggregation} />
-            ) : null}
-
-            {integratedSurveillance ? (
-              <SupportingPrimaryBlock item={integratedSurveillance} />
-            ) : null}
           </div>
         </div>
       </section>
 
-      {/* Data sources */}
       <section
         id="data-sources"
         aria-labelledby="data-sources-heading"
         className={cn(sectionAnchor, "rule-bottom")}
       >
         <div className="container-site section-y">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-16">
-            <SectionHeading
-              label={dataSources.label}
-              title={dataSources.title}
-              description={dataSources.description}
-              titleId="data-sources-heading"
-            />
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="flex flex-col gap-8">
+              <SectionHeading
+                label={dataSources.label}
+                title={dataSources.title}
+                description={dataSources.description}
+                titleId="data-sources-heading"
+              />
+              <ul className="flex flex-wrap gap-2">
+                {dataSources.formats.map((format) => (
+                  <li
+                    key={format}
+                    className="border border-border-subtle px-3 py-1.5 font-mono text-xs uppercase tracking-wide text-data"
+                  >
+                    {format}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-4">
-                <p className="text-label">Supported formats</p>
-                <ul className="flex flex-wrap gap-2">
-                  {dataSources.formats.map((format) => (
-                    <li
-                      key={format}
-                      className="border border-border-subtle px-3 py-1.5 font-mono text-xs uppercase tracking-wide text-data"
-                    >
-                      {format}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {dataSources.parameters ? (
-                <div className="flex flex-col gap-4 border-t border-border-subtle pt-8">
-                  <p className="text-label">Typical parameter context</p>
-                  <ul className="flex flex-col gap-2">
-                    {dataSources.parameters.map((parameter) => (
-                      <li
-                        key={parameter}
-                        className="text-body text-sm leading-relaxed"
-                      >
-                        {parameter}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Alerts and reporting */}
-      <section
-        id="alerts-reporting"
-        aria-labelledby="alerts-reporting-heading"
-        className={cn(sectionAnchor, "rule-bottom bg-surface")}
-      >
-        <div className="container-site section-y">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
-            <SectionHeading
-              label={alertsReporting.label}
-              title={alertsReporting.title}
-              description={alertsReporting.description}
-              titleId="alerts-reporting-heading"
-            />
-
-            <ul className="flex flex-col gap-0">
-              {alertsReporting.capabilities.map((capability, index) => (
-                <li
-                  key={capability}
-                  className="flex gap-4 border-t border-border-subtle py-5 first:border-t-0 first:pt-0 last:pb-0"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="font-mono text-xs text-data tabular-nums"
+              <SectionHeading
+                label={alertsReporting.label}
+                title={alertsReporting.title}
+                description={alertsReporting.description}
+                titleId="alerts-reporting-heading"
+              />
+              <ul className="flex flex-col gap-3">
+                {alertsReporting.capabilities.map((capability) => (
+                  <li
+                    key={capability}
+                    className="border-t border-border-subtle pt-3 text-sm leading-relaxed text-foreground/90 first:border-t-0 first:pt-0"
                   >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <p className="text-body text-sm leading-relaxed">
                     {capability}
-                  </p>
-                </li>
-              ))}
-            </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -729,7 +575,7 @@ export default function XbmPage() {
             </header>
 
             <ul className="flex flex-col gap-0">
-              {methodology.principles.map((principle, index) => (
+              {methodology.principles.map((principle) => (
                 <li
                   key={principle}
                   className="flex gap-4 border-t border-border-subtle py-5 first:border-t-0 first:pt-0 last:pb-0"
@@ -738,12 +584,7 @@ export default function XbmPage() {
                     aria-hidden="true"
                     className="mt-0.5 size-1.5 shrink-0 bg-ete-green"
                   />
-                  <div className="flex flex-col gap-1">
-                    <span className="font-mono text-xs text-data tabular-nums">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <p className="text-body">{principle}</p>
-                  </div>
+                  <p className="text-body">{principle}</p>
                 </li>
               ))}
             </ul>

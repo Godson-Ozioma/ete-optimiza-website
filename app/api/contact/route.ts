@@ -127,8 +127,8 @@ export async function POST(request: Request) {
     `Intent: ${formatIntent(data.intent)}`,
     `Name: ${escapeText(data.firstName)} ${escapeText(data.lastName)}`,
     `Email: ${escapeText(data.email)}`,
-    `Phone: ${escapeText(data.phone || "—")}`,
-    `Company: ${escapeText(data.company || "—")}`,
+    `Phone: ${escapeText(data.phone || "-")}`,
+    `Company: ${escapeText(data.company || "-")}`,
     "",
     escapeText(data.message),
   ].join("\n");

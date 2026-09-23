@@ -4,13 +4,13 @@ export const projects = {
   meta: {
     title: "Projects",
     description:
-      "ETE-Optimiza software development from PO-Studio (2020) to XBM (2026)—exception-based well surveillance and production optimization engineering.",
+      "ETE-Optimiza software development from PO-Studio (2020) to XBM (2026): exception-based well surveillance and production optimization engineering.",
   },
   hero: {
     eyebrow: "Product Evolution",
     title: "From production optimization software to exception-based surveillance.",
     description:
-      "ETE-Optimiza's software development spans a predecessor production-optimization platform and the current XBM flagship. This page traces that evolution—not client deployments or case studies.",
+      "ETE-Optimiza's software development spans a predecessor production-optimization platform and the current XBM flagship. This page traces that evolution, not client deployments or case studies.",
   },
   evolution: {
     label: "Timeline",
@@ -51,7 +51,7 @@ export const projects = {
   contactCta: {
     title: "Discuss your field or a pilot",
     description:
-      "Learn how XBM builds on ETE-Optimiza's production optimization direction—or explore collaboration on an engineering pilot.",
+      "Learn how XBM builds on ETE-Optimiza's production optimization direction, or explore collaboration on an engineering pilot.",
     primary: {
       label: "Contact Us",
       href: "/contact",

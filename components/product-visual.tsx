@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 type ProductVisualProps = {
   src: string;
   alt: string;
-  caption?: string;
   priority?: boolean;
   className?: string;
 };
@@ -13,12 +12,11 @@ type ProductVisualProps = {
 export function ProductVisual({
   src,
   alt,
-  caption,
   priority = false,
   className,
 }: ProductVisualProps) {
   return (
-    <figure className={cn("space-y-3", className)}>
+    <figure className={cn(className)}>
       <div className="rule-top rule-bottom bg-surface engineering-grid-fine p-1">
         <div className="relative overflow-hidden border border-border-subtle bg-background">
           <Image
@@ -32,14 +30,6 @@ export function ProductVisual({
           />
         </div>
       </div>
-      {caption ? (
-        <figcaption className="flex items-center gap-2 text-caption">
-          <span aria-hidden="true" className="font-mono text-data">
-            {"//"}
-          </span>
-          <span>{caption}</span>
-        </figcaption>
-      ) : null}
     </figure>
   );
 }

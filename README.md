@@ -1,6 +1,6 @@
 # ETE-Optimiza Website
 
-Production website for [ETE-Optimiza](https://ete-optimiza.com) — upstream production optimization technology and engineering services, featuring the XBM exception-based well surveillance platform.
+Production website for [ETE-Optimiza](https://ete-optimiza.com), upstream production optimization technology and engineering services, featuring the XBM exception-based well surveillance platform.
 
 ## Stack
 
@@ -101,4 +101,4 @@ public/assets/    Brand and XBM product imagery
 | `public/assets/brand/` | Company logo and brand files |
 | `public/assets/xbm/` | Approved XBM product and marketing visuals |
 
-Do not alter the company logo without approval. Use approved XBM visuals for product representation — do not substitute generated interface mockups.
+Do not alter the company logo without approval. Use approved XBM visuals for product representation. Do not substitute generated interface mockups.

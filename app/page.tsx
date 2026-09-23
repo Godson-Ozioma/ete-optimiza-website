@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 
 import { CtaBand } from "@/components/cta-band";
 import { EngineeringLabel } from "@/components/engineering-label";
+import { Hero } from "@/components/home/hero";
 import { ProductVisual } from "@/components/product-visual";
-import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { home } from "@/content/home";
@@ -45,7 +45,6 @@ const organizationJsonLd = {
 
 export default function Home() {
   const {
-    hero,
     problem,
     workflow,
     platform,
@@ -62,53 +61,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
-      {/* Hero */}
-      <section
-        aria-labelledby="hero-heading"
-        className="rule-bottom engineering-grid"
-      >
-        <div className="container-site section-y">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-12 xl:gap-16">
-            <div className="flex flex-col gap-6 lg:gap-8">
-              <EngineeringLabel as="p">{hero.eyebrow}</EngineeringLabel>
-              <h1
-                id="hero-heading"
-                className="text-display max-w-2xl text-balance"
-              >
-                {hero.title}
-              </h1>
-              <p className="text-body-muted max-w-xl">{hero.description}</p>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button
-                  size="lg"
-                  render={<Link href={hero.primaryCta.href} />}
-                  nativeButton={false}
-                >
-                  {hero.primaryCta.label}
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  render={<Link href={hero.secondaryCta.href} />}
-                  nativeButton={false}
-                >
-                  {hero.secondaryCta.label}
-                </Button>
-              </div>
-            </div>
-
-            <Reveal className="min-w-0 lg:-mr-4 xl:-mr-8">
-              <ProductVisual
-                src={hero.visual.src}
-                alt={hero.visual.alt}
-                caption={hero.visual.caption}
-                priority
-                className="w-full"
-              />
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Problem / context */}
       <section
@@ -134,17 +87,15 @@ export default function Home() {
             <div className="flex flex-col gap-0 border-l border-border-subtle pl-6 lg:pl-8">
               <p className="text-label mb-6">Engineering context</p>
               <ul className="flex flex-col gap-5">
-                {problem.points.map((point, index) => (
+                {problem.points.map((point) => (
                   <li
                     key={point}
                     className="flex gap-4 border-t border-border-subtle pt-5 first:border-t-0 first:pt-0"
                   >
                     <span
                       aria-hidden="true"
-                      className="font-mono text-xs text-data tabular-nums"
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+                      className="mt-2 size-1.5 shrink-0 bg-ete-green"
+                    />
                     <p className="text-body">{point}</p>
                   </li>
                 ))}
@@ -208,7 +159,7 @@ export default function Home() {
 
             <aside className="rule-top flex flex-col gap-3 pt-8 sm:flex-row sm:items-start sm:gap-6">
               <EngineeringLabel className="shrink-0">
-                Engineer-in-the-loop
+                Engineers stay in control
               </EngineeringLabel>
               <p className="text-body-muted max-w-3xl">{workflow.engineerNote}</p>
             </aside>
@@ -249,7 +200,6 @@ export default function Home() {
             <ProductVisual
               src={platform.visual.src}
               alt={platform.visual.alt}
-              caption={platform.visual.caption}
               className="w-full"
             />
           </div>
@@ -295,7 +245,6 @@ export default function Home() {
                       <ProductVisual
                         src={item.visual.src}
                         alt={item.visual.alt}
-                        caption={item.visual.caption}
                       />
                     </div>
 
@@ -346,7 +295,7 @@ export default function Home() {
             </header>
 
             <ul className="flex flex-col gap-0">
-              {credibility.principles.map((principle, index) => (
+              {credibility.principles.map((principle) => (
                 <li
                   key={principle}
                   className="flex gap-4 border-t border-border-subtle py-5 first:border-t-0 first:pt-0 last:pb-0"
@@ -356,9 +305,6 @@ export default function Home() {
                     className="mt-0.5 size-1.5 shrink-0 bg-ete-green"
                   />
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono text-xs text-data tabular-nums">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                     <p className="text-body">{principle}</p>
                   </div>
                 </li>

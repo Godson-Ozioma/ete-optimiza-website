@@ -2,7 +2,7 @@ import type { XbmContent } from "./types";
 
 export const xbm = {
   name: "XBM",
-  fullName: "XBM — Xception Based Monitoring",
+  fullName: "XBM - Xception Based Monitoring",
   tagline:
     "Exception-based well surveillance and production optimization for petroleum and production engineers.",
   summary:
@@ -13,29 +13,27 @@ export const xbm = {
     "Identify exceptions and abnormal trends",
     "Support diagnosis using engineering workflows and calculations",
     "Prioritize wells or conditions that require attention",
-    "Present recommendations or insights for engineer review",
+    "Rank the wells and conditions to review first",
   ] as const,
   workflowLabel: "DATA → MONITOR → DETECT → DIAGNOSE → PRIORITIZE → ENGINEER REVIEW",
   positioning: [
     "Exception-based surveillance",
     "Production optimization",
     "Well-performance monitoring",
-    "Engineering decision support",
-    "Proactive identification of abnormal well conditions",
-    "Integrated petroleum-engineering workflows",
+    "Identification of abnormal well conditions",
+    "Petroleum-engineering workflows in one platform",
     "Data-driven engineering analysis",
-    "Engineer-in-the-loop recommendations",
   ] as const,
   meta: {
     title: "XBM Platform",
     description:
-      "XBM — Xception Based Monitoring is ETE-Optimiza's exception-based well surveillance platform for production optimization, operating-envelope monitoring, and engineer-in-the-loop decision support.",
+      "XBM - Xception Based Monitoring helps petroleum engineers monitor well performance, find exceptions, and decide which wells to review first.",
   },
   hero: {
-    eyebrow: "XBM — Xception Based Monitoring",
+    eyebrow: "XBM - Xception Based Monitoring",
     title: "Exception-based surveillance for production engineers.",
     description:
-      "XBM connects well data, engineering workflows, and exception states into one platform—helping petroleum and production engineers monitor performance, diagnose probable issues, and prioritize wells that require attention.",
+      "XBM watches well performance, flags exceptions, and helps petroleum engineers decide which wells to review first.",
     primaryCta: {
       label: "Request a Pilot",
       href: "/contact?intent=pilot",
@@ -48,14 +46,12 @@ export const xbm = {
       id: "dashboard",
       src: "/assets/xbm/dashboard.png",
       alt: "XBM dashboard showing field performance overview, well navigation, and exception status",
-      caption: "XBM Dashboard",
     },
   },
   moduleIndex: {
-    label: "Platform modules",
-    title: "Integrated surveillance workflows",
-    description:
-      "XBM modules share a common data foundation and exception framework. Each capability below anchors to a section on this page; dedicated module routes may follow.",
+    label: "On this page",
+    title: "Workflows",
+    description: "Core surveillance workflows first, then the rest of the platform.",
     modules: [
       {
         id: "dashboard",
@@ -102,7 +98,7 @@ export const xbm = {
       {
         id: "lite-pta",
         anchor: "lite-pta",
-        name: "Short-Term / Lite PTA",
+        name: "Lite PTA",
         summary:
           "Short-duration pressure-transient analysis for skin, damage, and productivity screening.",
       },
@@ -131,9 +127,9 @@ export const xbm = {
   },
   workflow: {
     label: "Engineering workflow",
-    title: "From data to engineer review",
+    title: "How XBM works",
     description:
-      "XBM follows a connected surveillance sequence. Each stage builds on the previous—screening outputs are presented for engineer validation, not autonomous operational action.",
+      "Well data moves through six steps, from import to a short list of wells worth reviewing.",
     sequence: "DATA → MONITOR → DETECT → DIAGNOSE → PRIORITIZE → ENGINEER REVIEW",
     steps: [
       {
@@ -141,7 +137,7 @@ export const xbm = {
         label: "DATA",
         title: "Ingest or access well and production data",
         description:
-          "Bring structured well history and current parameters from approved file formats and engineering tools into a common surveillance foundation.",
+          "Import well history and current parameters from Excel, CSV, JSON, TXT, and tools such as PROSPER.",
       },
       {
         id: "monitor",
@@ -162,7 +158,7 @@ export const xbm = {
         label: "DIAGNOSE",
         title: "Support engineering analysis",
         description:
-          "Apply integrated workflows—operating envelope, drawdown, flux screening, PTA, and related calculations—to help identify probable causes.",
+          "Compare operating envelope, drawdown, flux, and Lite PTA results to narrow the likely cause.",
       },
       {
         id: "prioritize",
@@ -174,66 +170,63 @@ export const xbm = {
       {
         id: "engineer-review",
         label: "ENGINEER REVIEW",
-        title: "Recommendations for validation",
+        title: "Show where to look next",
         description:
-          "Present insights and recommendations for petroleum-engineer review. XBM supports decision-making—it does not authorize operational changes.",
+          "Rank the wells and conditions that should be reviewed first.",
       },
     ],
   },
   exceptionStates: {
     label: "Exception states",
-    title: "Structured status language across surveillance",
+    title: "Four states, used the same way across the field",
     description:
-      "XBM uses consistent exception states so engineers can scan field and well conditions quickly. Undefined indicates incomplete or unavailable context—it is neutral and does not imply a healthy operating state.",
+      "Critical, Warning, and Normal describe the surveillance result. Undefined means the data is missing or incomplete. Treat the well as unchecked until that data is available.",
     states: [
       {
         status: "critical",
         description:
-          "Conditions outside critical operating limits or showing patterns that require immediate engineering review.",
+          "Outside critical limits, or a pattern that needs review now.",
       },
       {
         status: "warning",
         description:
-          "Parameters approaching limits or trending toward conditions that may require follow-up.",
+          "Approaching a limit, or trending toward a condition that may need follow-up.",
       },
       {
         status: "normal",
         description:
-          "Parameters within expected operating ranges based on configured surveillance context.",
+          "Inside the ranges configured for that well.",
       },
       {
         status: "undefined",
         description:
-          "Insufficient or unavailable data to assign a surveillance state. Requires data review—not an indication of normal performance.",
+          "Not enough data to assign a state. Check the data before treating the well as normal.",
       },
     ],
   },
   primaryCapabilities: {
     label: "Primary capabilities",
-    title: "Core engineering surveillance workflows",
+    title: "Core workflows",
     description:
-      "Four integrated workflows form the technical backbone of exception-based monitoring—each designed for production-engineering review, not autonomous control.",
+      "Operating envelope, drawdown, flux, and Lite PTA carry most of the day-to-day surveillance.",
     items: [
       {
         id: "operating-envelope",
         anchor: "operating-envelope",
         title: "Operating Envelope",
-        summary: "Per-well surveillance against defined operating limits.",
+        summary: "See when a well moves outside its limits.",
         paragraphs: [
-          "Operating Envelope highlights when well conditions move outside expected ranges. Engineers configure limits and monitor parameters such as oil and gas rates, choke position, tubing-head pressure, gas-lift injection, pseudo skin, wellbore gradient, and wellbore velocity.",
-          "Warning and critical states, gauges, surveillance plots, and live updates support continuous review—without publishing fixed thresholds as universal defaults.",
+          "Engineers set the limits. XBM watches oil and gas rate, choke, tubing-head pressure, gas-lift injection, pseudo skin, wellbore gradient, and wellbore velocity, and marks Warning or Critical when a well leaves that envelope.",
         ],
         points: [
-          "Warning and critical exception states",
-          "Configurable threshold context per well",
-          "Gauges and surveillance plots",
-          "Live operating-envelope updates",
+          "Warning and Critical states",
+          "Limits set per well",
+          "Gauges, plots, and live updates",
         ],
         visual: {
           id: "operating-envelope",
           src: "/assets/xbm/operating_envelope.png",
           alt: "Operating envelope surveillance view with per-well limit monitoring and status indicators",
-          caption: "Product visual",
         },
         layout: "visual-right",
       },
@@ -241,21 +234,19 @@ export const xbm = {
         id: "maximum-sustainable-drawdown",
         anchor: "maximum-sustainable-drawdown",
         title: "Maximum Sustainable Drawdown",
-        summary: "Dynamic drawdown surveillance—not a single static limit.",
+        summary: "See when more drawdown stops delivering more production.",
         paragraphs: [
-          "Maximum Sustainable Drawdown supports identification of operating conditions where increasing drawdown stops producing a proportionate production benefit or begins indicating increased risk.",
-          "The workflow focuses on drawdown versus production response, changing production efficiency, and screening for the edge of effective operating performance—presented as engineering surveillance, not an autonomous setpoint.",
+          "XBM compares drawdown with production response. The aim is to show where extra drawdown stops adding proportionate production, or where the trend starts to look like added risk.",
         ],
         points: [
           "Drawdown versus production response",
-          "Changing production efficiency screening",
-          "Risk-oriented operating condition identification",
+          "Changing production efficiency",
+          "The edge of useful operating performance",
         ],
         visual: {
           id: "drawdown",
           src: "/assets/xbm/drawdown-2.png",
           alt: "Maximum sustainable drawdown analysis view showing drawdown versus production response",
-          caption: "Product visual",
         },
         layout: "visual-left",
       },
@@ -263,40 +254,35 @@ export const xbm = {
         id: "flux-analysis",
         anchor: "flux-analysis",
         title: "Flux Analysis",
-        summary:
-          "An additional integrity-related indicator—drawdown alone is not sufficient for sand-control surveillance.",
+        summary: "Track flow velocity through the effective screen area.",
         paragraphs: [
-          "Flux is an engineering indicator related to flow velocity through effective screen area. XBM uses flux surveillance to support sand-control and screen-integrity monitoring alongside drawdown and rate trends.",
-          "Useful relationships include flux over time, rate versus effective area, pressure-loss behavior, sand indicators, and step changes associated with choke movement. Outputs are screening indicators for engineer review.",
+          "Flux is the average flow velocity through the effective screen area. XBM tracks it with rate, drawdown, sand indicators, and choke changes so sand-control risk is not judged from drawdown alone.",
         ],
         points: [
-          "Flux over time and rate versus effective area",
-          "Pressure-loss behavior and sand indicators",
-          "Step changes associated with choke movement",
-          "Complements drawdown for screen-integrity screening",
+          "Flux over time",
+          "Rate versus effective screen area",
+          "Pressure loss, sand indicators, and choke steps",
         ],
         layout: "text-only",
       },
       {
         id: "lite-pta",
         anchor: "lite-pta",
-        title: "Short-Term / Lite PTA",
-        summary: "Short-duration pressure-transient analysis for routine surveillance.",
+        title: "Lite PTA",
+        summary: "Screen near-wellbore changes from routine shut-ins.",
         paragraphs: [
-          "Lite PTA provides short-duration pressure-transient-analysis workflows intended for surveillance shut-ins—not long-duration reservoir characterization.",
-          "Approved objectives include skin assessment, near-wellbore damage screening, completion effectiveness review, productivity comparison, and before/after workover comparison. Results require engineer validation.",
+          "Lite PTA focuses on near-wellbore surveillance: skin, completion effectiveness, productivity changes, and before-and-after workover comparisons.",
+          "Long-duration testing remains the right method for reservoir-boundary characterization.",
         ],
         points: [
-          "Skin and near-wellbore damage screening",
-          "Completion effectiveness and productivity comparison",
-          "Before/after workover comparison support",
-          "Not a substitute for long-duration reservoir tests",
+          "Skin and near-wellbore damage",
+          "Completion effectiveness and productivity",
+          "Before-and-after workover comparison",
         ],
         visual: {
           id: "lite-pta",
           src: "/assets/xbm/Lite_PTA.png",
-          alt: "Short-term pressure transient analysis workflow for skin and productivity screening",
-          caption: "Product visual",
+          alt: "Lite PTA workflow for skin and productivity screening",
         },
         layout: "visual-right",
       },
@@ -304,28 +290,21 @@ export const xbm = {
   },
   supportingCapabilities: {
     label: "Supporting capabilities",
-    title: "Data foundation, aggregation, and integrated review",
+    title: "The rest of the platform",
     description:
-      "Beyond the core workflows, XBM modules provide structured data access, alternative rate surveillance, skin monitoring, production roll-ups, and a combined health view.",
+      "Dashboard, well history, temperature-derived rates, pseudo skin, production roll-ups, and a combined field view.",
     items: [
       {
         id: "dashboard",
         anchor: "dashboard",
         title: "XBM Dashboard",
-        summary: "Field and well performance at a glance.",
+        summary: "See field performance and open exceptions in one view.",
         detail:
-          "The dashboard provides an overview of monitoring status with key performance indicators, well navigation, production trends, monitoring indicators, exception status, and near-real-time surveillance views.",
-        points: [
-          "KPIs and well navigation",
-          "Production trends and snapshots",
-          "Exception status across the field",
-          "Near-real-time surveillance views",
-        ],
+          "KPIs, well navigation, production trends, and exception status, including near-real-time updates.",
         visual: {
           id: "dashboard",
           src: "/assets/xbm/dashboard.png",
           alt: "XBM dashboard showing field performance overview, well navigation, and exception status",
-          caption: "Product visual",
         },
         emphasis: "primary",
       },
@@ -333,21 +312,13 @@ export const xbm = {
         id: "well-data-book",
         anchor: "well-data-book",
         title: "Well Data Book",
-        summary: "Structured parameter history for engineering review.",
+        summary: "Keep the well history engineers need for diagnosis in one place.",
         detail:
-          "Well Data Book organizes important well parameters in one place—supporting diagnosis and trend review across the surveillance workflow.",
-        points: [
-          "Allocated oil, gas, and water",
-          "Static and flowing bottom-hole pressure",
-          "Drawdown and productivity index",
-          "Pseudo skin, wellbore gradient, and friction drop",
-          "Tubing-head and wellhead pressure, choke size",
-        ],
+          "Allocated oil, gas, and water; static and flowing bottom-hole pressure; drawdown; productivity index; pseudo skin; gradient; friction drop; tubing-head and wellhead pressure; choke size.",
         visual: {
           id: "well-data",
           src: "/assets/xbm/Well_Data.png",
           alt: "Well data book with structured parameter history and engineering fields",
-          caption: "Product visual",
         },
         emphasis: "secondary",
       },
@@ -355,14 +326,13 @@ export const xbm = {
         id: "temperature-derived-rates",
         anchor: "temperature-derived-rates",
         title: "Temperature-Derived Rates",
-        summary: "Rate estimation from measured temperature data.",
+        summary: "Estimate rate from temperature when a direct measurement is intermittent.",
         detail:
-          "Uses measured temperature data and data-driven relationships to estimate production rates for surveillance—supporting teams when direct rate measurement context varies.",
+          "XBM uses measured well temperature and established data relationships to estimate production rate for surveillance.",
         visual: {
           id: "temperature-derived",
           src: "/assets/xbm/Temperature_derived.png",
           alt: "Temperature-derived rate estimation view for production surveillance",
-          caption: "Product visual",
         },
         emphasis: "secondary",
       },
@@ -370,19 +340,13 @@ export const xbm = {
         id: "pseudo-skin",
         anchor: "pseudo-skin",
         title: "Pseudo Skin Surveillance",
-        summary: "Near-wellbore condition screening from routine shut-ins.",
+        summary: "Watch skin and productivity from routine shut-ins.",
         detail:
-          "Monitors skin and productivity changes using routine short-duration shut-in data. Typical shut-in windows may include one, twenty-four, or forty-eight hours—supporting screening relative to previous surveillance, not replacing conventional pressure-transient analysis.",
-        points: [
-          "Skin and near-wellbore condition trends",
-          "Productivity change screening",
-          "Comparison against prior surveillance windows",
-        ],
+          "Compare skin and near-wellbore productivity across shut-in windows of about 1, 24, or 48 hours.",
         visual: {
           id: "pseudo-skin",
           src: "/assets/xbm/skin_mornitoring.png",
           alt: "Pseudo skin surveillance monitoring view for near-wellbore screening",
-          caption: "Product visual",
         },
         emphasis: "tertiary",
       },
@@ -390,44 +354,27 @@ export const xbm = {
         id: "production-aggregation",
         anchor: "production-aggregation",
         title: "Production Aggregation",
-        summary: "Roll-up views across well, field, or asset scope.",
+        summary: "Roll production up from well to field to asset.",
         detail:
-          "Supports daily, monthly, yearly, average, total, and cumulative production views with engineering indicators such as oil, gas, water, GOR, water cut, and WOR.",
-        points: [
-          "Daily, monthly, and yearly views",
-          "Average, total, and cumulative aggregation",
-          "Oil, gas, water, GOR, water cut, and WOR",
-        ],
+          "Daily, monthly, yearly, average, total, and cumulative views for oil, gas, water, GOR, water cut, and WOR.",
         emphasis: "tertiary",
       },
       {
         id: "integrated-surveillance",
         anchor: "integrated-surveillance",
         title: "Integrated Surveillance",
-        summary: "Combined field and well health across workflows.",
+        summary: "Ask which wells need review, across workflows.",
         detail:
-          "Connects multiple surveillance modules into a broader review context—helping engineers answer questions such as which wells show flat rate with increasing drawdown, increasing skin, high flux with rising drawdown, or incomplete data quality.",
-        points: [
-          "Exception and well-health summaries",
-          "Drawdown, skin, and flux screening together",
-          "Data-quality and review-priority flags",
-          "Engineering recommendations for review",
-        ],
-        visual: {
-          id: "dashboard-integrated",
-          src: "/assets/xbm/dashboard.png",
-          alt: "Integrated surveillance dashboard with exception summaries and well health indicators",
-          caption: "Product visual",
-        },
-        emphasis: "primary",
+          "For example: flat rate with rising drawdown, rising skin, high flux with rising drawdown, or a well whose data is incomplete.",
+        emphasis: "tertiary",
       },
     ],
   },
   dataSources: {
     label: "Data inputs",
-    title: "Approved sources and formats",
+    title: "What you can import",
     description:
-      "XBM ingests structured well and production data from approved file formats and petroleum-engineering tools. Do not assume integrations beyond those listed without engineering confirmation.",
+      "Import structured well and production data from Excel, CSV, JSON, TXT, and supported petroleum-engineering tools such as PROSPER.",
     formats: ["Excel", "CSV", "JSON", "TXT", "PROSPER"],
     parameters: [
       "Production rates and pressures",
@@ -438,9 +385,9 @@ export const xbm = {
   },
   alertsReporting: {
     label: "Alerts and reporting",
-    title: "Monitoring support for engineering teams",
+    title: "Alerts and reports",
     description:
-      "XBM supports live monitoring, exception alerts, and configurable threshold context—keeping engineers informed when conditions require review.",
+      "Watch wells live, raise an alert when a threshold is crossed, and send the exception by email. Export PDF and Excel reports when the review needs a record.",
     capabilities: [
       "Live monitoring and exception alerts",
       "Alarm states with configurable thresholds",
@@ -451,16 +398,14 @@ export const xbm = {
   },
   methodology: {
     label: "Engineering methodology",
-    title: "Engineer-in-the-loop by design",
+    title: "Engineers stay in control",
     paragraphs: [
-      "XBM is built to support screening, diagnosis, prioritization, and review—not to replace petroleum engineers or authorize operational changes independently.",
-      "The platform identifies exceptions, applies established production-engineering workflows, and presents recommendations for qualified staff to validate. Operational decisions remain with engineering teams.",
+      "XBM surfaces exceptions, supports diagnosis, and helps engineers prioritize where to investigate next. Operational decisions remain with qualified engineering teams.",
     ],
     principles: [
-      "Exception-based surveillance over undifferentiated chart review",
-      "Integrated workflows grounded in well-performance fundamentals",
-      "Screening outputs validated before operational action",
-      "Recommendations as engineering decision support",
+      "The same four states on every workflow",
+      "Drawdown, skin, flux, and operating limits read together",
+      "A shorter review list, still checked by an engineer",
     ],
   },
   pilotCta: {
@@ -482,49 +427,41 @@ export const xbm = {
       id: "dashboard",
       src: "/assets/xbm/dashboard.png",
       alt: "XBM dashboard showing field performance overview and exception status",
-      caption: "Product visual",
     },
     {
       id: "operating-envelope",
       src: "/assets/xbm/operating_envelope.png",
       alt: "Operating envelope surveillance view with per-well limit monitoring",
-      caption: "Product visual",
     },
     {
       id: "temperature-derived",
       src: "/assets/xbm/Temperature_derived.png",
       alt: "Temperature-derived rate estimation for production surveillance",
-      caption: "Product visual",
     },
     {
       id: "drawdown",
       src: "/assets/xbm/drawdown-2.png",
       alt: "Maximum sustainable drawdown analysis view",
-      caption: "Product visual",
     },
     {
       id: "lite-pta",
       src: "/assets/xbm/Lite_PTA.png",
-      alt: "Short-term pressure transient analysis workflow",
-      caption: "Product visual",
+      alt: "Lite PTA workflow",
     },
     {
       id: "pseudo-skin",
       src: "/assets/xbm/skin_mornitoring.png",
       alt: "Pseudo skin surveillance monitoring view",
-      caption: "Product visual",
     },
     {
       id: "well-data",
       src: "/assets/xbm/Well_Data.png",
       alt: "Well data book with structured parameter history",
-      caption: "Product visual",
     },
     {
       id: "home",
       src: "/assets/xbm/home_page.png",
       alt: "XBM platform home view",
-      caption: "Product visual",
     },
   ],
 } satisfies XbmContent & {

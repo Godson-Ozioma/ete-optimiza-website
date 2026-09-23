@@ -24,7 +24,6 @@ export default function ServicesPage() {
   const {
     hero,
     collaboration,
-    engagement,
     domains,
     platform,
     contextualVisual,
@@ -91,17 +90,15 @@ export default function ServicesPage() {
             </header>
 
             <ul className="flex flex-col gap-0">
-              {collaboration.principles.map((principle, index) => (
+              {collaboration.principles.map((principle) => (
                 <li
                   key={principle}
                   className="flex gap-4 border-t border-border-subtle py-5 first:border-t-0 first:pt-0 last:pb-0"
                 >
                   <span
                     aria-hidden="true"
-                    className="font-mono text-xs text-data tabular-nums"
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                    className="mt-2 size-1.5 shrink-0 bg-ete-green"
+                  />
                   <p className="text-body">{principle}</p>
                 </li>
               ))}
@@ -110,44 +107,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Engagement workflow */}
-      <section
-        aria-labelledby="engagement-heading"
-        className="rule-bottom"
-      >
-        <div className="container-site section-y">
-          <div className="flex flex-col gap-12 lg:gap-16">
-            <SectionHeading
-              label={engagement.label}
-              title={engagement.title}
-              description={engagement.description}
-              className="max-w-3xl"
-              titleId="engagement-heading"
-            />
-
-            <ol className="flex flex-col gap-0 border-l border-border-subtle">
-              {engagement.phases.map((phase) => (
-                <li
-                  key={phase.id}
-                  className="grid gap-3 border-b border-border-subtle py-8 pl-6 last:border-b-0 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-8 sm:pl-8"
-                >
-                  <span className="font-mono text-sm font-medium tabular-nums text-ete-green">
-                    {phase.label}
-                  </span>
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-h3">{phase.title}</h3>
-                    <p className="text-body-muted text-sm leading-relaxed">
-                      {phase.description}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* Service domains */}
+      {/* Service groups */}
       <section
         aria-labelledby="domains-heading"
         className="rule-bottom bg-surface"
@@ -214,9 +174,6 @@ export default function ServicesPage() {
                 {platform.title}
               </h2>
               <p className="text-body-muted">{platform.description}</p>
-              <p className="text-body border-l-2 border-ete-green pl-4 text-sm leading-relaxed">
-                {platform.note}
-              </p>
               <div className="pt-2">
                 <Button
                   variant="outline"
@@ -237,7 +194,6 @@ export default function ServicesPage() {
               <ProductVisual
                 src={contextualVisual.src}
                 alt={contextualVisual.alt}
-                caption={contextualVisual.caption}
               />
             ) : null}
           </div>
