@@ -216,3 +216,48 @@
     @apply py-16 sm:py-20 lg:py-24;
   }
 }
+
+/* Homepage-only light palette. Other pages keep the instrument surface. */
+.home-canvas {
+  --background: oklch(0.955 0.012 85);
+  --foreground: oklch(0.27 0.02 55);
+  --muted-foreground: oklch(0.4 0.018 55);
+  --card: oklch(0.975 0.008 85);
+  --card-foreground: oklch(0.27 0.02 55);
+  --primary: oklch(0.48 0.13 145);
+  --primary-foreground: oklch(0.98 0.01 95);
+  --accent: oklch(0.92 0.014 85);
+  --accent-foreground: oklch(0.27 0.02 55);
+  --border: oklch(0.27 0.02 55 / 14%);
+  --border-subtle: oklch(0.27 0.02 55 / 8%);
+  --input: oklch(0.27 0.02 55 / 18%);
+  --ring: oklch(0.48 0.13 145 / 45%);
+  --ete-green: oklch(0.46 0.13 145);
+  --home-stone: oklch(0.9 0.02 75);
+  --home-sage: oklch(0.93 0.028 145);
+  --home-sand: oklch(0.945 0.02 85);
+  --home-beige: oklch(0.925 0.024 78);
+  --home-slate: oklch(0.9 0.018 155);
+  color-scheme: light;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.home-hero-photo {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero-photo {
+    animation: home-hero-drift 32s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes home-hero-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}

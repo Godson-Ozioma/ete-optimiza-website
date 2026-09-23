@@ -312,69 +312,78 @@ export type ProjectsContent = {
   };
 };
 
+export type HomeImage = {
+  src: string;
+  alt: string;
+};
+
+export type HomeServiceLink = {
+  name: string;
+  href: string;
+  image?: HomeImage;
+};
+
+export type HomeProcessPhase = {
+  id: string;
+  title: string;
+  points: readonly string[];
+  image: HomeImage;
+};
+
+export type HomeProject = {
+  id: string;
+  year?: string;
+  name: string;
+  description?: string;
+  features?: readonly string[];
+  useCases?: readonly string[];
+  status?: string;
+  href?: string;
+  image?: HomeImage;
+};
+
 export type HomeContent = {
   meta: {
     title: string;
     description: string;
   };
   hero: {
-    eyebrow: string;
     title: string;
-    description: string;
-    primaryCta: CtaLink;
-    secondaryCta: CtaLink;
-    visual: ProductVisualAsset;
-  };
-  problem: {
-    label: string;
-    title: string;
-    paragraphs: readonly string[];
-    points: readonly string[];
-  };
-  workflow: {
-    label: string;
-    title: string;
-    description: string;
-    sequence: string;
-    steps: readonly WorkflowStep[];
-    engineerNote: string;
-  };
-  platform: {
-    label: string;
-    title: string;
-    description: string;
-    link: CtaLink;
-    visual: ProductVisualAsset;
-  };
-  capabilities: {
-    label: string;
-    title: string;
-    description: string;
-    items: readonly CapabilityHighlight[];
-  };
-  credibility: {
-    label: string;
-    title: string;
-    paragraphs: readonly string[];
-    principles: readonly string[];
+    cta: CtaLink;
+    image: HomeImage;
   };
   services: {
-    label: string;
+    title: string;
+    phrases: readonly string[];
+    items: readonly HomeServiceLink[];
+  };
+  xbm: {
     title: string;
     description: string;
-    expertise: string;
-    links: readonly CtaLink[];
+    cta: CtaLink;
+    image: HomeImage;
+  };
+  who: {
+    title: string;
+    body: string;
+    facts: readonly string[];
+    cta: CtaLink;
+    image: HomeImage;
+  };
+  process: {
+    phases: readonly HomeProcessPhase[];
+  };
+  testimonial: {
+    title: string;
+    quote: string;
+    attribution: string;
   };
   projects: {
-    label: string;
     title: string;
-    description: string;
-    entries: readonly ProjectEntry[];
+    items: readonly HomeProject[];
   };
-  pilotCta: {
+  contact: {
     title: string;
-    description: string;
-    primary: CtaLink;
-    secondary: CtaLink;
+    image: HomeImage;
   };
 };

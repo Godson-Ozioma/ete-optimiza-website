@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { EngineeringLabel } from "@/components/engineering-label";
-import { HeroSurveillanceVisual } from "@/components/home/hero-surveillance-visual";
 import { Button } from "@/components/ui/button";
 import { home } from "@/content/home";
 
@@ -10,50 +8,34 @@ export function Hero() {
   const { hero } = home;
 
   return (
-    <section
-      aria-labelledby="hero-heading"
-      className="rule-bottom engineering-grid overflow-x-clip"
-    >
-      <div className="container-site section-y">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.12fr)] lg:items-stretch lg:gap-6 xl:gap-8">
-          <div className="relative z-10 flex flex-col gap-6 lg:gap-8 lg:justify-center">
-            <EngineeringLabel as="p">{hero.eyebrow}</EngineeringLabel>
-            <h1
-              id="hero-heading"
-              className="text-display max-w-2xl text-balance"
-            >
-              {hero.title}
-            </h1>
-            <p className="text-body-muted max-w-xl">{hero.description}</p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button
-                size="lg"
-                render={<Link href={hero.primaryCta.href} />}
-                nativeButton={false}
-              >
-                {hero.primaryCta.label}
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                render={<Link href={hero.secondaryCta.href} />}
-                nativeButton={false}
-              >
-                {hero.secondaryCta.label}
-              </Button>
-            </div>
-          </div>
+    <section aria-labelledby="hero-heading" className="relative min-h-[88svh] bg-neutral-950 text-white">
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src={hero.image.src}
+          alt={hero.image.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="home-hero-photo object-cover object-[center_40%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/25" />
+      </div>
 
-          <HeroSurveillanceVisual>
-            <Image
-              src={hero.visual.src}
-              alt={hero.visual.alt}
-              fill
-              priority
-              sizes="(min-width: 1280px) 720px, (min-width: 1024px) 560px, 100vw"
-              className="object-cover"
-            />
-          </HeroSurveillanceVisual>
+      <div className="container-site relative flex min-h-[88svh] items-end py-16 sm:py-20 lg:items-center lg:py-24">
+        <div className="flex max-w-3xl flex-col gap-6">
+          <p className="text-sm font-medium text-white/80">ETE-Optimiza</p>
+          <h1 id="hero-heading" className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.12]">
+            {hero.title}
+          </h1>
+          <div>
+            <Button
+              size="lg"
+              render={<Link href={hero.cta.href} />}
+              nativeButton={false}
+            >
+              {hero.cta.label}
+            </Button>
+          </div>
         </div>
       </div>
     </section>

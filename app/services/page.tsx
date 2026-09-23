@@ -10,6 +10,14 @@ import { Button } from "@/components/ui/button";
 import { services } from "@/content/services";
 import { site } from "@/content/site";
 
+const serviceThemeAnchor: Record<string, string> = {
+  "Operating envelope and exception states": "operating-envelope",
+  "Drawdown versus production response": "sustainable-drawdown",
+  "Flux and screen integrity": "flux-analysis",
+  "Lite PTA and pseudo skin": "pressure-test-analysis",
+  "AI-assisted reading of surveillance results": "agentic-ai",
+};
+
 export const metadata: Metadata = {
   title: services.meta.title,
   description: services.meta.description,
@@ -126,8 +134,13 @@ export default function ServicesPage() {
               {domains.items.map((item) => (
                 <article
                   key={item.id}
+                  id={
+                    item.id === "surveillance-diagnostics"
+                      ? "exception-based-monitoring"
+                      : undefined
+                  }
                   aria-labelledby={`domain-${item.id}-heading`}
-                  className="grid gap-6 border-t border-border-subtle py-10 first:border-t-0 first:pt-0 lg:grid-cols-[minmax(0,0.35fr)_minmax(0,1fr)] lg:gap-12 lg:py-12"
+                  className="grid scroll-mt-20 gap-6 border-t border-border-subtle py-10 first:border-t-0 first:pt-0 lg:grid-cols-[minmax(0,0.35fr)_minmax(0,1fr)] lg:gap-12 lg:py-12"
                 >
                   <div className="flex flex-col gap-2">
                     <EngineeringLabel>{item.name}</EngineeringLabel>
@@ -146,9 +159,13 @@ export default function ServicesPage() {
                         {item.themes.map((theme) => (
                           <li
                             key={theme}
-                            className="text-body text-sm leading-relaxed"
+                            id={serviceThemeAnchor[theme]}
+                            className="scroll-mt-24 text-body text-sm leading-relaxed"
                           >
                             {theme}
+                            {theme === "Lite PTA and pseudo skin" ? (
+                              <span id="pseudo-skin" />
+                            ) : null}
                           </li>
                         ))}
                       </ul>

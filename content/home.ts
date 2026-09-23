@@ -2,227 +2,220 @@ import type { HomeContent } from "./types";
 
 export const home = {
   meta: {
-    title: "Production Optimization Technology",
+    title: "Upstream Oilfield Optimization",
     description:
-      "ETE-Optimiza builds XBM, exception-based well surveillance for petroleum and production engineers, and provides the engineering services around it.",
+      "ETE-Optimiza is a Richmond, Texas technology company for upstream production optimization, engineering services, and software including XBM.",
   },
   hero: {
-    eyebrow: "Exception-Based Production Surveillance",
-    title: "Production surveillance that tells engineers where to look first.",
-    description:
-      "XBM monitors well performance, surfaces exceptions, and helps petroleum engineers focus on the wells that need attention before they spend hours reviewing every chart.",
-    primaryCta: {
-      label: "Request a Pilot",
-      href: "/contact?intent=pilot",
+    title:
+      "Unleashing Peak Performance: Harnessing Cutting-Edge Tech for Strategic Oilfield Optimization",
+    cta: {
+      label: "Let's Connect",
+      href: "#contact",
     },
-    secondaryCta: {
-      label: "Explore XBM",
+    image: {
+      src: "/assets/home/hero-oilfield.jpg",
+      alt: "Pumping unit silhouetted against a sunset sky.",
+    },
+  },
+  services: {
+    title: "ETE-Optimiza Services",
+    phrases: [
+      "Expert Solutions.",
+      "Innovative Technology.",
+      "Driven by Results",
+    ],
+    items: [
+      {
+        name: "Exception-Based Monitoring",
+        href: "/services#exception-based-monitoring",
+        image: {
+          src: "/assets/xbm/dashboard.png",
+          alt: "Surveillance interface used to illustrate exception-based monitoring.",
+        },
+      },
+      {
+        name: "Operating Envelope",
+        href: "/services#operating-envelope",
+        image: {
+          src: "/assets/xbm/operating_envelope.png",
+          alt: "Operating envelope view used to illustrate that service.",
+        },
+      },
+      {
+        name: "Sustainable Drawdown",
+        href: "/services#sustainable-drawdown",
+        image: {
+          src: "/assets/xbm/drawdown-2.png",
+          alt: "Drawdown view used to illustrate sustainable drawdown.",
+        },
+      },
+      {
+        name: "Pressure Test Analysis - at-a-fly",
+        href: "/services#pressure-test-analysis",
+        image: {
+          src: "/assets/xbm/Lite_PTA.png",
+          alt: "Pressure-test view used to illustrate pressure test analysis.",
+        },
+      },
+      {
+        name: "Flux Analysis",
+        href: "/services#flux-analysis",
+      },
+      {
+        name: "Pseudo Skin",
+        href: "/services#pseudo-skin",
+        image: {
+          src: "/assets/xbm/skin_mornitoring.png",
+          alt: "Skin monitoring view used to illustrate pseudo skin.",
+        },
+      },
+      {
+        name: "Agentic AI for Well Diagnostics",
+        href: "/services#agentic-ai",
+        image: {
+          src: "/assets/xbm/Well_Data.png",
+          alt: "Well data view used to illustrate diagnostics support.",
+        },
+      },
+    ],
+  },
+  xbm: {
+    title: "XBM",
+    description:
+      "Boost Your Oil Output—Right from Your Desktop. ETE-Optimiza’s purpose-built XBM optimization software empowers engineers to drive comprehensive improvements and strategically plan your oilfield assets.",
+    cta: {
+      label: "Learn More",
       href: "/xbm",
     },
-    visual: {
-      id: "surveillance",
+    image: {
       src: "/assets/hero/xbm-surveillance-base.png",
       alt: "Technical visualization of monitored production wells and subsurface formations.",
     },
   },
-  problem: {
-    label: "The surveillance challenge",
-    title: "Too much data. Not enough engineering signal.",
-    paragraphs: [
-      "Production teams monitor rates, pressures, drawdown, skin, and operating limits across growing well inventories. Dashboards accumulate charts, but engineers still need to decide which wells deserve review first.",
-      "Exception-based surveillance surfaces the abnormal conditions first, so review starts with the wells that need it.",
-    ],
-    points: [
-      "Well inventories outpace routine review capacity",
-      "Rates, pressures, drawdown, and skin need to be read together",
-      "A short list of exceptions beats another dashboard of charts",
-    ],
+  who: {
+    title: "Who We Are",
+    body: "Our mission is to deliver optimization solutions that maximize performance and efficiency in the upstream oil and gas sector. As a cutting-edge technology company, we draw on more than thirty years of experience and pioneering technology to streamline production processes. We are committed to equipping our clients with innovative strategies that drive operational excellence and foster a culture of safety. Through our deep expertise and unwavering dedication, we empower clients with the tools and insights necessary to achieve their objectives.",
+    facts: ["Founded 2020", "Richmond, TX-based"],
+    cta: {
+      label: "About Us",
+      href: "/about",
+    },
+    image: {
+      src: "/assets/home/field-aerial.jpg",
+      alt: "Drilling rig and lease equipment in open terrain.",
+    },
   },
-  workflow: {
-    label: "How XBM works",
-    title: "From well data to a short review list",
-    description:
-      "XBM imports well data, watches the parameters that matter, and ranks the wells that need a closer look.",
-    sequence: "DATA → MONITOR → DETECT → DIAGNOSE → PRIORITIZE → ENGINEER REVIEW",
-    steps: [
+  process: {
+    phases: [
       {
-        id: "data",
-        label: "DATA",
-        title: "Ingest well and production data",
-        description:
-          "Import well history and current rates, pressures, and related parameters.",
-      },
-      {
-        id: "monitor",
-        label: "MONITOR",
-        title: "Continuous parameter surveillance",
-        description:
-          "Track operating limits, performance trends, and engineering indicators across field and well scope.",
-      },
-      {
-        id: "detect",
-        label: "DETECT",
-        title: "Identify exceptions and abnormal trends",
-        description:
-          "Highlight conditions that move outside expected ranges or show patterns that warrant engineering attention.",
+        id: "plan",
+        title: "PLAN",
+        image: {
+          src: "/assets/home/hero-oilfield.jpg",
+          alt: "Pumping unit in an open field.",
+        },
+        points: [
+          "Assess current well performance through data analysis and field evaluation",
+          "Identify production bottlenecks and inefficiencies",
+          "Set clear optimization objectives aligned with operational goals",
+          "Evaluate and select appropriate technologies, such as artificial lift systems, chemical treatments, and real-time monitoring tools",
+          "Develop a step-by-step implementation plan, including timeline, budget, and resource allocation",
+          "Engage multidisciplinary teams for integrated solutions, including reservoir, production, and facilities engineers",
+          "Monitor progress with key performance indicators (KPIs) and adjust strategies as needed",
+          "Prioritize health, safety, and environmental considerations throughout the process",
+          "Document lessons learned and best practices for future optimization projects",
+        ],
       },
       {
         id: "diagnose",
-        label: "DIAGNOSE",
-        title: "Support engineering analysis",
-        description:
-          "Apply integrated workflows: operating envelope, drawdown, PTA screening, and related calculations, to surface probable causes.",
-      },
-      {
-        id: "prioritize",
-        label: "PRIORITIZE",
-        title: "Rank wells requiring attention",
-        description:
-          "Focus review on wells and conditions where surveillance indicates the greatest need for engineering follow-up.",
-      },
-      {
-        id: "engineer-review",
-        label: "ENGINEER REVIEW",
-        title: "Show where to look next",
-        description:
-          "Rank the wells and conditions that should be reviewed first.",
-      },
-    ],
-    engineerNote:
-      "XBM surfaces exceptions, supports diagnosis, and helps engineers prioritize where to investigate next. Operational decisions remain with qualified engineering teams.",
-  },
-  platform: {
-    label: "XBM platform",
-    title: "One connected surveillance platform",
-    description:
-      "Dashboard, well history, operating envelope, drawdown, and Lite PTA sit in one surveillance workflow.",
-    link: {
-      label: "Explore the XBM platform",
-      href: "/xbm",
-    },
-    visual: {
-      id: "operating-envelope",
-      src: "/assets/xbm/operating_envelope.png",
-      alt: "Operating envelope surveillance view with per-well limit monitoring",
-    },
-  },
-  capabilities: {
-    label: "Engineering capabilities",
-    title: "Surveillance workflows built for production engineers",
-    description:
-      "Four workflows cover the questions production engineers ask most often.",
-    items: [
-      {
-        id: "operating-envelope",
-        title: "Operating Envelope",
-        summary: "See when a well moves outside its limits.",
-        detail:
-          "Track rates, choke, tubing-head pressure, gas-lift injection, pseudo skin, and wellbore gradient against the limits set for that well.",
-        visual: {
-          id: "operating-envelope",
-          src: "/assets/xbm/operating_envelope.png",
-          alt: "Operating envelope surveillance view with per-well limit monitoring and status indicators",
+        title: "DIAGNOSE",
+        image: {
+          src: "/assets/home/optimize-plant.jpg",
+          alt: "Pressure gauges mounted on process piping.",
         },
-        layout: "visual-right",
+        points: [
+          "Utilize AI-driven analytics to diagnose oil well performance issues by processing real-time and historical data",
+          "Integrate AI solutions with existing monitoring and control systems for seamless data flow and enhanced insight",
+          "Automate anomaly detection and root cause analysis to accelerate troubleshooting and optimize production",
+          "Leverage AI to recommend targeted interventions based on comprehensive data analysis and patterns",
+        ],
       },
       {
-        id: "sustainable-drawdown",
-        title: "Maximum Sustainable Drawdown",
-        summary: "See when more drawdown stops delivering more production.",
-        detail:
-          "XBM compares drawdown with production response so engineers can see the edge of useful operating performance.",
-        visual: {
-          id: "drawdown",
-          src: "/assets/xbm/drawdown-2.png",
-          alt: "Maximum sustainable drawdown analysis view with drawdown versus production response",
+        id: "optimize",
+        title: "OPTIMIZE",
+        image: {
+          src: "/assets/home/plan-field.jpg",
+          alt: "Process facility at dusk.",
         },
-        layout: "visual-left",
-      },
-      {
-        id: "lite-pta",
-        title: "Lite PTA",
-        summary: "Screen near-wellbore changes from routine shut-ins.",
-        detail:
-          "Lite PTA looks at skin, completion effectiveness, and productivity from short shut-in windows. Reservoir-boundary work still belongs to long-duration tests.",
-        visual: {
-          id: "lite-pta",
-          src: "/assets/xbm/Lite_PTA.png",
-          alt: "Lite PTA workflow for skin and productivity screening",
-        },
-        layout: "visual-right",
-      },
-      {
-        id: "integrated-surveillance",
-        title: "Integrated Surveillance",
-        summary: "See which wells need review now.",
-        detail:
-          "Drawdown, skin, operating-envelope exceptions, and data gaps are read together so the field view points at specific wells.",
-        visual: {
-          id: "dashboard-integrated",
-          src: "/assets/xbm/dashboard.png",
-          alt: "Integrated surveillance dashboard with exception summaries and well health indicators",
-        },
-        layout: "visual-left",
+        points: [
+          "Analyze real-time and historical well data to identify performance gaps",
+          "Implement advanced monitoring and control systems for continuous optimization",
+          "Apply enhanced recovery techniques, such as artificial lift or stimulation",
+          "Optimize production parameters for maximum efficiency and output",
+          "Regularly review and adjust strategies based on performance metrics",
+        ],
       },
     ],
   },
-  credibility: {
-    label: "Engineering credibility",
-    title: "Built around how production engineers already work",
-    paragraphs: [
-      "The workflows use the same parameters engineers already compare: rates, pressures, drawdown, skin, and operating limits.",
-    ],
-    principles: [
-      "Exceptions first, then the charts that explain them",
-      "Drawdown, skin, limits, and data quality read together",
-      "Same surveillance questions across the field, well by well",
-    ],
-  },
-  services: {
-    label: "Software and engineering expertise",
-    title: "Technology backed by production-engineering experience",
-    description:
-      "ETE-Optimiza develops XBM and works with operators on production optimization, surveillance, and field implementation.",
-    expertise:
-      "The team draws on more than 30 years of combined industry experience in petroleum engineering, production optimization, and software development.",
-    links: [
-      { label: "View services", href: "/services" },
-      { label: "About ETE-Optimiza", href: "/about" },
-    ],
+  testimonial: {
+    title: "What Clients Say",
+    quote:
+      "There is nothing so useless as doing efficiently that which should not be done at all.",
+    attribution: "Peter F. Drucker",
   },
   projects: {
-    label: "Product evolution",
-    title: "From production optimization software to XBM",
-    description:
-      "ETE-Optimiza's software development spans a predecessor platform and the current flagship surveillance system.",
-    entries: [
+    title: "Recent Projects",
+    items: [
       {
-        year: 2020,
+        id: "po-studio",
+        year: "2020",
         name: "PO-Studio",
-        summary:
-          "Earlier production-optimization software with KPI dashboard, virtual collaboration room, well performance dashboard, and production gap analyzer.",
-        status: "predecessor",
+        description:
+          "PO-Studio is an innovative production optimization software platform, soon to be commercially available.",
+        features: [
+          "KPI Dashboard",
+          "Virtual Collaboration Room",
+          "Well Performance Dashboard",
+          "Production Gap Analyzer",
+        ],
+        useCases: [
+          "Screen and analyze wells to uncover hidden inefficiencies",
+          "Evaluate the impact of correcting problems",
+          "Search for unlocked potentials",
+          "Improve technical efficiency",
+          "Increase profitability",
+        ],
+        href: "/projects",
+        image: {
+          src: "/assets/home/plan-field.jpg",
+          alt: "Process facility photographed from the air.",
+        },
       },
       {
-        year: 2026,
-        name: "XBM",
-        summary:
-          "Exception-based well surveillance that analyzes well data, identifies probable issues, and alerts engineers to the conditions that need attention.",
-        status: "current",
+        id: "flow-iq",
+        year: "2026",
+        name: "Flow iQ",
+        description:
+          "Built Software that performs exception-based surveillance by analyzing well data, swiftly identifying probable causes, and proactively alerting engineers before issues escalate. It recommends solutions based on proven strategies for improving well performance.",
+        href: "/xbm",
+        image: {
+          src: "/assets/xbm/dashboard.png",
+          alt: "XBM interface illustrating the Flow iQ project entry.",
+        },
+      },
+      {
+        id: "optimech",
+        name: "Optimech",
+        status: "Coming Soon",
       },
     ],
   },
-  pilotCta: {
-    title: "Collaborate on an XBM pilot",
-    description:
-      "ETE-Optimiza invites operators and engineering teams to explore exception-based surveillance with XBM. Discuss your field, review the platform, and evaluate fit for your surveillance workflow.",
-    primary: {
-      label: "Request a Pilot",
-      href: "/contact?intent=pilot",
-    },
-    secondary: {
-      label: "Explore XBM",
-      href: "/xbm",
+  contact: {
+    title: "Let's collaborate on your next project.",
+    image: {
+      src: "/assets/home/rig-worker.jpg",
+      alt: "Field worker beside a drilling rig and tubulars.",
     },
   },
 } satisfies HomeContent;
