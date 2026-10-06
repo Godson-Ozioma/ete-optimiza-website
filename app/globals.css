@@ -288,6 +288,273 @@
   color: var(--foreground);
 }
 
+/* About page surface. Tokens stay on this root so other pages are unchanged. */
+.about-page {
+  --about-paper: #f7f3ea;
+  --about-cream: #eee5d5;
+  --about-sage: #e5eae0;
+  --about-ink: #242a24;
+  --about-muted: #525c50;
+  --about-green: #28583e;
+  --about-lime: #66d44a;
+  --about-dark: #14251c;
+  --about-rule: #c9cebf;
+  --about-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --background: var(--about-paper);
+  --foreground: var(--about-ink);
+  --muted-foreground: var(--about-muted);
+  --border: var(--about-rule);
+  --ring: var(--about-green);
+  color-scheme: light;
+  background: var(--about-paper);
+  color: var(--about-ink);
+}
+
+.about-container {
+  width: min(1280px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.about-section {
+  padding-block: 56px;
+}
+
+.about-hero-frame {
+  position: relative;
+  display: grid;
+  background: var(--about-dark);
+  color: var(--about-paper);
+}
+
+.about-hero-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.about-hero-photo {
+  object-position: 76% 50%;
+}
+
+.about-hero-shade {
+  display: none;
+}
+
+.about-hero-copy {
+  padding-block: 40px 36px;
+}
+
+.about-mission-rule {
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin-top: 18px;
+  background: var(--about-green);
+  transform-origin: left center;
+}
+
+.about-values {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    width: min(1280px, calc(100% - 64px));
+  }
+
+  .about-section {
+    padding-block: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-hero-frame {
+    height: clamp(440px, 32vw, 480px);
+    max-width: 1600px;
+    margin-inline: auto;
+  }
+
+  .about-hero-media {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+  }
+
+  .about-hero-photo {
+    object-position: 58% 50%;
+  }
+
+  .about-hero-shade {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(20 37 28 / 58%) 0%,
+      rgb(20 37 28 / 8%) 70%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  .about-hero-copy {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-block: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-container {
+    width: min(1280px, calc(100% - 96px));
+  }
+
+  .about-section {
+    padding-block: 104px;
+  }
+
+  .about-values::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 8%;
+    left: 8%;
+    height: 1px;
+    background: var(--about-rule);
+  }
+}
+
+@media (min-width: 1440px) {
+  .about-container {
+    width: min(1280px, calc(100% - 128px));
+  }
+}
+
+.about-legacy {
+  --about-stone: oklch(0.9 0.018 68);
+  --about-sage: oklch(0.915 0.035 142);
+  --about-ivory: oklch(0.975 0.012 82);
+  --about-olive: oklch(0.4 0.075 143);
+  --about-accent: oklch(0.53 0.13 143);
+  --about-portrait-start: oklch(0.91 0.024 78);
+  --about-portrait-end: oklch(0.79 0.025 60);
+  --foreground: oklch(0.27 0.025 55);
+  --background: oklch(0.965 0.014 82);
+}
+
+.about-wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .about-wrap {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-wrap {
+    padding-inline: 2.5rem;
+  }
+}
+
+.about-page a:focus-visible,
+.about-page button:focus-visible {
+  outline: 3px solid var(--about-green);
+  outline-offset: 4px;
+}
+
+.about-page .on-dark a:focus-visible,
+.about-page .on-dark button:focus-visible {
+  outline-color: var(--about-lime);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page *,
+  .about-page *::before,
+  .about-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Modular steel-and-petrol surface for the Utility Tools page only. */
+.utility-canvas {
+  --background: oklch(0.95 0.012 185);
+  --foreground: oklch(0.24 0.026 190);
+  --muted-foreground: oklch(0.43 0.024 190);
+  --card: oklch(0.975 0.008 185);
+  --card-foreground: oklch(0.24 0.026 190);
+  --primary: oklch(0.46 0.13 145);
+  --primary-foreground: oklch(0.98 0.01 95);
+  --accent: oklch(0.89 0.024 185);
+  --accent-foreground: oklch(0.24 0.026 190);
+  --border: oklch(0.24 0.026 190 / 15%);
+  --border-subtle: oklch(0.24 0.026 190 / 9%);
+  --input: oklch(0.24 0.026 190 / 18%);
+  --ring: oklch(0.46 0.13 145 / 45%);
+  --critical: oklch(0.52 0.19 25);
+  --warning: oklch(0.58 0.13 72);
+  --success: oklch(0.42 0.12 145);
+  --undefined: oklch(0.48 0.018 200);
+  --utility-ink: oklch(0.24 0.035 190);
+  --utility-petrol: oklch(0.36 0.075 185);
+  --utility-aqua: oklch(0.67 0.09 184);
+  --utility-amber: oklch(0.72 0.12 75);
+  --utility-mist: oklch(0.945 0.018 190);
+  --utility-steel: oklch(0.9 0.025 195);
+  --utility-stone: oklch(0.925 0.014 78);
+  --utility-paper: oklch(0.975 0.008 185);
+  --utility-rule: oklch(0.24 0.035 190 / 16%);
+  color-scheme: light;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.utility-wrap {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+}
+
+.utility-deep {
+  background: var(--utility-ink);
+  color: oklch(0.97 0.008 185);
+}
+
+.utility-grid {
+  background-image:
+    linear-gradient(oklch(0.92 0.025 185 / 7%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.92 0.025 185 / 7%) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .utility-canvas *,
+  .utility-canvas *::before,
+  .utility-canvas *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .utility-canvas .utility-motion {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .utility-canvas .utility-path {
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
 /* Cool technical surface for the XBM product page only. */
 .xbm-canvas {
   --xbm-ink: oklch(0.24 0.032 228);

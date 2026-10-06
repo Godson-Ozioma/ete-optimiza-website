@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Exception-Based Monitoring (XBM)",
-  alternateName: "XBM",
+  name: "Flow iQ",
+  alternateName: "Flow iQ",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: xbm.meta.description,

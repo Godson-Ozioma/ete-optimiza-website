@@ -4,7 +4,7 @@ export const home = {
   meta: {
     title: "Upstream Oilfield Optimization",
     description:
-      "ETE-Optimiza is a Richmond, Texas technology company for upstream production optimization, engineering services, and software including XBM.",
+      "ETE-Optimiza is a Richmond, Texas technology company for upstream production optimization, engineering services, and software including Flow iQ.",
   },
   hero: {
     title:
@@ -19,7 +19,7 @@ export const home = {
     },
   },
   services: {
-    title: "ETE-Optimiza Services",
+    title: "Optimech",
     phrases: [
       "Expert Solutions.",
       "Innovative Technology.",
@@ -27,7 +27,7 @@ export const home = {
     ],
     items: [
       {
-        name: "Exception-Based Monitoring",
+        name: "Flow iQ",
         href: "/services#exception-based-monitoring",
         image: {
           src: "/assets/xbm/dashboard.png",
@@ -81,9 +81,9 @@ export const home = {
     ],
   },
   xbm: {
-    title: "XBM",
+    title: "Flow iQ",
     description:
-      "Boost Your Oil Output—Right from Your Desktop. ETE-Optimiza’s purpose-built XBM optimization software empowers engineers to drive comprehensive improvements and strategically plan your oilfield assets.",
+      "Boost Your Oil Output—Right from Your Desktop. ETE-Optimiza’s purpose-built Flow iQ optimization software empowers engineers to drive comprehensive improvements and strategically plan your oilfield assets.",
     cta: {
       label: "Learn More",
       href: "/xbm",
@@ -165,7 +165,7 @@ export const home = {
     attribution: "Peter F. Drucker",
   },
   projects: {
-    title: "Recent Projects",
+    title: "Utility Tools",
     items: [
       {
         id: "po-studio",
@@ -201,7 +201,7 @@ export const home = {
         href: "/xbm",
         image: {
           src: "/assets/xbm/dashboard.png",
-          alt: "XBM interface illustrating the Flow iQ project entry.",
+          alt: "Flow iQ interface illustrating the Flow iQ project entry.",
         },
       },
       {
@@ -214,8 +214,8 @@ export const home = {
   contact: {
     title: "Let's collaborate on your next project.",
     image: {
-      src: "/assets/home/rig-worker.jpg",
-      alt: "Field worker beside a drilling rig and tubulars.",
+      src: "/assets/home/collaborate-planning.jpg",
+      alt: "Illustrative scene of an engineering team reviewing field plans.",
     },
   },
 } satisfies HomeContent;

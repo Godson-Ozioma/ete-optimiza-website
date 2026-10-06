@@ -43,7 +43,6 @@ export function XbmDrawdownSection() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             />
           </svg>
-          <p className="text-sm text-muted-foreground">Conceptual shape only. No measured values.</p>
         </div>
       </div>
     </section>

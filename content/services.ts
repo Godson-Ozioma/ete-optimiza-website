@@ -2,14 +2,14 @@ import type { ServicesContent } from "./types";
 
 export const services = {
   meta: {
-    title: "Services",
+    title: "Optimech",
     description:
-      "Collaborative engineering services for upstream production optimization, well surveillance, diagnostics, and Exception-Based Monitoring (XBM).",
+      "Collaborative engineering services for upstream production optimization, well surveillance, diagnostics, and Flow iQ.",
   },
   hero: {
-    title: "Collaborative Services",
+    title: "Optimech",
     lede: "Let us work together!",
-    body: "We invite companies to partner with us in testing our Exception-Based Monitoring (XBM) Application. This tool has been designed to help organizations proactively diagnose oil well and asset issues. If you're interested, please use the Contact Form to reach out to us.",
+    body: "We invite companies to partner with us in testing our Flow iQ Application. This tool has been designed to help organizations proactively diagnose oil well and asset issues. If you're interested, please use the Contact Form to reach out to us.",
     cta: {
       label: "Contact Us",
       href: "/contact",
@@ -22,16 +22,16 @@ export const services = {
   offerings: [
     {
       id: "exception-based-monitoring",
-      title: "Exception-Based Monitoring",
+      title: "Flow iQ",
       paragraphs: [
-        "The XBM application enables organizations to automatically monitor their assets, alerting them to issues that require attention so they can proactively resolve problems and maximize asset value.",
+        "The Flow iQ application enables organizations to automatically monitor their assets, alerting them to issues that require attention so they can proactively resolve problems and maximize asset value.",
       ],
       image: {
         src: "/assets/hero/xbm-surveillance-base.png",
         alt: "Technical visualization of monitored production wells and subsurface formations.",
       },
       cta: {
-        label: "Explore XBM",
+        label: "Explore Flow iQ",
         href: "/xbm",
       },
     },
@@ -50,7 +50,7 @@ export const services = {
       id: "sustainable-drawdown",
       title: "Sustainable Drawdown",
       paragraphs: [
-        "XBM uses temperature-derived rates or multiphase rates, together with real-time surveillance plots, to identify the maximum sustainable drawdown limit.",
+        "Flow iQ uses temperature-derived rates or multiphase rates, together with real-time surveillance plots, to identify the maximum sustainable drawdown limit.",
         "That limit is the point at which productivity decline accelerates. Operating limits can be identified dynamically rather than assumed as a fixed value.",
       ],
       image: {

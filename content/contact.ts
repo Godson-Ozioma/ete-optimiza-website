@@ -2,7 +2,7 @@ import { contact as contactInfo, site } from "./site";
 
 export const contactIntents = [
   { value: "general", label: "General inquiry" },
-  { value: "pilot", label: "Request an XBM pilot" },
+  { value: "pilot", label: "Request a Flow iQ pilot" },
   { value: "partnership", label: "Partnership" },
   { value: "other", label: "Other" },
 ] as const;
@@ -13,13 +13,13 @@ export const contactPage = {
   meta: {
     title: "Contact",
     description:
-      "Contact ETE-Optimiza to request an XBM pilot, discuss your field, or explore partnership opportunities in upstream production optimization.",
+      "Contact ETE-Optimiza to request a Flow iQ pilot, discuss your field, or explore partnership opportunities in upstream production optimization.",
   },
   hero: {
     eyebrow: "Contact",
     title: "Discuss your field with the ETE-Optimiza team.",
     description:
-      "Request an XBM pilot, ask about engineering collaboration, or send a general inquiry. We respond during business hours.",
+      "Request a Flow iQ pilot, ask about engineering collaboration, or send a general inquiry. We respond during business hours.",
   },
   details: contactInfo,
   fallbackEmail: contactInfo.email,

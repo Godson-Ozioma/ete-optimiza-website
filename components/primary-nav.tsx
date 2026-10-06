@@ -17,6 +17,16 @@ export function PrimaryNav({ className, onNavigate }: PrimaryNavProps) {
   return (
     <ul className={cn("flex items-center gap-1", className)}>
       {primaryNav.map((item) => {
+        if (!item.href) {
+          return (
+            <li key={item.label}>
+              <span className="rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground">
+                {item.label}
+              </span>
+            </li>
+          );
+        }
+
         const isActive =
           item.href === "/"
             ? pathname === "/"

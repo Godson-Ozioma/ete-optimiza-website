@@ -16,13 +16,19 @@ export function SiteFooter() {
             <p className="text-label">Menu</p>
             <ul className="space-y-2">
               {primaryNav.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-muted-foreground hover:text-foreground focus-ring rounded-sm"
-                  >
-                    {item.label}
-                  </Link>
+                <li key={item.label}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="text-sm text-muted-foreground hover:text-foreground focus-ring rounded-sm"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <span className="text-sm text-muted-foreground">
+                      {item.label}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

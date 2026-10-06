@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import { ContactSplit } from "@/components/home/contact-split";
 import { Hero } from "@/components/home/hero";
 import { ProcessPanels } from "@/components/home/process-panels";
-import { ProjectsCarousel } from "@/components/home/projects-carousel";
 import { ServicesNav } from "@/components/home/services-nav";
-import { Testimonial } from "@/components/home/testimonial";
 import { WhoWeAre } from "@/components/home/who-we-are";
 import { XbmTeaser } from "@/components/home/xbm-teaser";
 import { home } from "@/content/home";
@@ -54,8 +52,6 @@ export default function Home() {
       <XbmTeaser />
       <WhoWeAre />
       <ProcessPanels />
-      <Testimonial />
-      <ProjectsCarousel />
       <ContactSplit />
     </main>
   );

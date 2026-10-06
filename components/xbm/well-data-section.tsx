@@ -79,7 +79,7 @@ export function XbmWellDataSection() {
                     );
                   })}
                 </ul>
-                <p className="text-sm text-muted-foreground sm:ml-auto">→ XBM Well Data Book</p>
+                <p className="text-sm text-muted-foreground sm:ml-auto">→ Flow iQ Well Data Book</p>
               </div>
             </div>
           </div>

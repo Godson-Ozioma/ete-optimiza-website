@@ -58,7 +58,7 @@ const previews: Record<string, { src: string; alt: string } | null> = {
 };
 
 export function XbmModuleNav() {
-  const [activeId, setActiveId] = useState(xbm.modules[1]?.id ?? xbm.modules[0].id);
+  const [activeId, setActiveId] = useState(xbm.modules[0].id);
   const active = xbm.modules.find((module) => module.id === activeId) ?? xbm.modules[0];
   const preview = previews[active.id];
 
@@ -66,9 +66,9 @@ export function XbmModuleNav() {
     <section id="platform" aria-labelledby="platform-heading" className="scroll-mt-20 bg-[var(--xbm-cloud)]">
       <div className="xbm-wrap section-y">
         <h2 id="platform-heading" className="text-h2 mb-8">
-          Platform
+          Sub Modules
         </h2>
-        <nav aria-label="XBM modules" className="min-w-0 overflow-hidden">
+        <nav aria-label="Flow iQ modules" className="min-w-0 overflow-hidden">
           <ul className="flex gap-2 overflow-x-auto pb-2">
             {xbm.modules.map((module) => {
               const Icon = icons[module.id as keyof typeof icons];

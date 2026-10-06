@@ -2,10 +2,10 @@ import type { CtaLink, NavItem } from "./types";
 
 export const primaryNav: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "XBM", href: "/xbm" },
+  { label: "Optimech" },
+  { label: "Flow iQ", href: "/xbm" },
+  { label: "Utility Tools", href: "/projects" },
   { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
 ];
 
 export const primaryCta: CtaLink = {

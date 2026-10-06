@@ -13,7 +13,7 @@ export default function NotFound() {
         </h1>
         <p className="text-body-muted">
           The address may be incorrect, or the page may have moved. Return to
-          the homepage or open the XBM platform overview.
+          the homepage or open the Flow iQ overview.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button render={<Link href="/" />} nativeButton={false}>
@@ -24,7 +24,7 @@ export default function NotFound() {
             render={<Link href="/xbm" />}
             nativeButton={false}
           >
-            Explore XBM
+            Explore Flow iQ
           </Button>
         </div>
       </section>

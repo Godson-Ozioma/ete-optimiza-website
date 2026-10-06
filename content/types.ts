@@ -1,6 +1,6 @@
 export type NavItem = {
   label: string;
-  href: string;
+  href?: string;
 };
 
 export type CtaLink = {
@@ -22,6 +22,7 @@ export type ContactInfo = {
 export type LeadershipMember = {
   name: string;
   title: string;
+  image?: PageImage;
 };
 
 export type ProductModule = {
@@ -214,23 +215,33 @@ export type AboutContent = {
   };
   hero: {
     title: string;
-    support: string;
-    body: string;
     image: PageImage;
+    primary: CtaLink;
+    secondary: CtaLink;
   };
   mission: {
+    index: string;
     title: string;
-    text: string;
+    statement: string;
+    paragraphs: readonly string[];
+    image: PageImage;
+  };
+  promises: {
+    eyebrow: string;
+    title: string;
+    paragraphs: readonly string[];
+    image: PageImage;
+    facts: readonly { term: string; detail: string }[];
   };
   vision: {
     title: string;
-    text: string;
+    paragraphs: readonly string[];
   };
   company: {
     title: string;
     paragraphs: readonly string[];
     offerings: readonly string[];
-    link: CtaLink;
+    image: PageImage;
   };
   values: {
     title: string;
@@ -238,7 +249,12 @@ export type AboutContent = {
   };
   leadership: {
     title: string;
+    portraitNote: string;
     members: readonly LeadershipMember[];
+  };
+  closing: {
+    title: string;
+    cta: CtaLink;
   };
 };
 
@@ -247,38 +263,6 @@ export type ProjectTimelineEntry = ProjectEntry & {
   role: string;
   features?: readonly string[];
   link?: CtaLink;
-};
-
-export type ProjectsContent = {
-  meta: {
-    title: string;
-    description: string;
-  };
-  hero: {
-    title: string;
-    sentence: string;
-    image: PageImage;
-  };
-  poStudio: {
-    year: string;
-    name: string;
-    description: string;
-    features: readonly string[];
-    useCases: readonly string[];
-    image: PageImage;
-  };
-  flowIq: {
-    year: string;
-    name: string;
-    description: string;
-    link: CtaLink;
-    image: PageImage;
-  };
-  optimech: {
-    name: string;
-    status: string;
-    image: PageImage;
-  };
 };
 
 export type HomeImage = {
