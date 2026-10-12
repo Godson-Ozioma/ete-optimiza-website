@@ -2,12 +2,12 @@ import type { ServicesContent } from "./types";
 
 export const services = {
   meta: {
-    title: "Optimech",
+    title: "Optimesh",
     description:
       "Collaborative engineering services for upstream production optimization, well surveillance, diagnostics, and Flow iQ.",
   },
   hero: {
-    title: "Optimech",
+    title: "Optimesh",
     lede: "Let us work together!",
     body: "We invite companies to partner with us in testing our Flow iQ Application. This tool has been designed to help organizations proactively diagnose oil well and asset issues. If you're interested, please use the Contact Form to reach out to us.",
     cta: {

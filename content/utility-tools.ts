@@ -1,10 +1,4 @@
-import type { ExceptionStatus } from "./types";
-
-export type UtilityToolId =
-  | "aggregation"
-  | "search"
-  | "imports"
-  | "triage";
+export type UtilityToolId = "aggregation" | "search" | "imports";
 
 export type UtilityTool = {
   id: UtilityToolId;
@@ -12,11 +6,6 @@ export type UtilityTool = {
   category: string;
   summary: string;
   description: string;
-};
-
-export type TriageRow = {
-  label: string;
-  status: ExceptionStatus;
 };
 
 export const utilityTools = {
@@ -55,14 +44,6 @@ export const utilityTools = {
       description:
         "Bring structured engineering data into XBM from supported files and organize it for consistent downstream use.",
     },
-    {
-      id: "triage",
-      title: "Exception Triage Tool",
-      category: "Engineering review",
-      summary: "Surface wells and operating conditions that require attention.",
-      description:
-        "Help engineers identify and prioritize wells or operating conditions requiring attention while keeping engineering review in the decision path.",
-    },
   ] satisfies readonly UtilityTool[],
   aggregation: {
     sources: [
@@ -91,22 +72,6 @@ export const utilityTools = {
     support:
       "Supported petroleum-engineering software such as PROSPER can be included where applicable.",
   },
-  triage: {
-    rows: [
-      { label: "Well A", status: "normal" },
-      { label: "Well B", status: "warning" },
-      { label: "Well C", status: "normal" },
-      { label: "Well D", status: "critical" },
-      { label: "Well E", status: "normal" },
-    ] satisfies readonly TriageRow[],
-    states: [
-      "normal",
-      "warning",
-      "critical",
-      "undefined",
-    ] satisfies readonly ExceptionStatus[],
-    outcome: "2 wells require review",
-  },
   workflow: {
     title: "How the tools work together",
     steps: [
@@ -114,7 +79,6 @@ export const utilityTools = {
       "Import",
       "Aggregate",
       "Search",
-      "Triage",
       "Engineering review",
     ],
   },

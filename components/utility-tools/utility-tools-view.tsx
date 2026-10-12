@@ -1,20 +1,12 @@
 "use client";
 
-import {
-  ArrowDown,
-  FileInput,
-  Layers3,
-  ListFilter,
-  Search,
-} from "lucide-react";
+import { ArrowDown, FileInput, Layers3, Search } from "lucide-react";
 import { motion, MotionConfig } from "motion/react";
 
-import { StatusIndicator } from "@/components/status-indicator";
 import {
   AggregationVisual,
   ImportsVisual,
   SearchVisual,
-  TriageVisual,
   UtilityHeroVisual,
   WorkflowVisual,
 } from "@/components/utility-tools/tool-visuals";
@@ -24,7 +16,6 @@ const toolIcons = {
   aggregation: Layers3,
   search: Search,
   imports: FileInput,
-  triage: ListFilter,
 } satisfies Record<UtilityToolId, typeof Layers3>;
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -88,7 +79,7 @@ function ToolsOverview() {
         </h2>
 
         <nav aria-label="Utility tools">
-          <ul className="grid border-y border-[var(--utility-ink)]/14 md:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid border-y border-[var(--utility-ink)]/14 md:grid-cols-2 lg:grid-cols-3">
             {utilityTools.tools.map((tool, index) => {
               const Icon = toolIcons[tool.id];
               return (
@@ -275,44 +266,6 @@ function ImportsSection() {
   );
 }
 
-function TriageSection() {
-  const tool = utilityTools.tools[3];
-
-  return (
-    <section
-      id={tool.id}
-      aria-labelledby="triage-heading"
-      className="scroll-mt-20 bg-[var(--utility-steel)]"
-    >
-      <div className="utility-wrap grid items-center gap-12 py-18 sm:py-24 lg:grid-cols-[minmax(0,1.08fr)_minmax(22rem,0.92fr)] lg:gap-20 lg:py-30">
-        <TriageVisual />
-        <motion.div
-          initial={{ opacity: 0, x: 28 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease }}
-          className="utility-motion flex flex-col gap-8"
-        >
-          <ToolHeading
-            category={tool.category}
-            title={tool.title}
-            description={tool.description}
-            headingId="triage-heading"
-          />
-          <div>
-            <p className="mb-4 text-sm font-medium">Surveillance states</p>
-            <div className="flex flex-wrap gap-x-6 gap-y-3">
-              {utilityTools.triage.states.map((state) => (
-                <StatusIndicator key={state} status={state} />
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
 function WorkflowSection() {
   return (
     <section
@@ -345,7 +298,6 @@ export function UtilityToolsView() {
       <AggregationSection />
       <SearchSection />
       <ImportsSection />
-      <TriageSection />
       <WorkflowSection />
     </MotionConfig>
   );

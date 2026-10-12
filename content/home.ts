@@ -19,7 +19,7 @@ export const home = {
     },
   },
   services: {
-    title: "Optimech",
+    title: "Optimesh",
     phrases: [
       "Expert Solutions.",
       "Innovative Technology.",
@@ -206,7 +206,7 @@ export const home = {
       },
       {
         id: "optimech",
-        name: "Optimech",
+        name: "Optimesh",
         status: "Coming Soon",
       },
     ],

@@ -2,20 +2,17 @@
 
 import {
   Braces,
-  CircleCheck,
   Database,
   FileInput,
   FileSpreadsheet,
   FileText,
   Layers3,
-  ListFilter,
   Search,
   Table2,
   UserCheck,
 } from "lucide-react";
 import { motion } from "motion/react";
 
-import { StatusIndicator } from "@/components/status-indicator";
 import { utilityTools } from "@/content/utility-tools";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -364,64 +361,11 @@ export function ImportsVisual() {
   );
 }
 
-export function TriageVisual() {
-  return (
-    <div
-      className="border border-[var(--utility-ink)]/14 bg-[var(--utility-paper)] p-4 sm:p-7"
-      role="img"
-      aria-label="Illustrative well list prioritizing warning and critical states for engineering review."
-    >
-      <div className="mb-5 flex items-center justify-between border-b border-[var(--utility-ink)]/12 pb-4">
-        <span className="text-sm font-semibold">Surveillance list</span>
-        <ListFilter
-          aria-hidden="true"
-          strokeWidth={1.5}
-          className="size-5 text-[var(--utility-petrol)]"
-        />
-      </div>
-
-      <div className="grid gap-2">
-        {utilityTools.triage.rows.map((row, index) => (
-          <motion.div
-            key={row.label}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -24 : 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-70px" }}
-            transition={{ duration: 0.4, delay: index * 0.07, ease }}
-            className="utility-motion flex items-center justify-between border border-[var(--utility-ink)]/10 bg-[var(--utility-steel)] px-4 py-3"
-          >
-            <span className="text-sm font-medium">{row.label}</span>
-            <StatusIndicator status={row.status} />
-          </motion.div>
-        ))}
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-70px" }}
-        transition={{ duration: 0.5, delay: 0.5, ease }}
-        className="utility-motion mt-5 flex items-center gap-3 border-l-2 border-[var(--utility-amber)] bg-[var(--utility-amber)]/10 px-4 py-4"
-      >
-        <CircleCheck
-          aria-hidden="true"
-          strokeWidth={1.5}
-          className="size-5 text-[var(--utility-petrol)]"
-        />
-        <span className="text-sm font-semibold">
-          {utilityTools.triage.outcome}
-        </span>
-      </motion.div>
-    </div>
-  );
-}
-
 const workflowIcons = [
   Database,
   FileInput,
   Layers3,
   Search,
-  ListFilter,
   UserCheck,
 ] as const;
 
@@ -445,9 +389,9 @@ export function WorkflowVisual() {
         className="utility-motion absolute bottom-7 left-7 top-7 w-px origin-top bg-[var(--utility-aqua)]/70 lg:hidden"
       />
 
-      <ol className="relative grid gap-7 lg:grid-cols-6 lg:gap-4">
+      <ol className="relative grid gap-7 lg:grid-cols-5 lg:gap-4">
         {utilityTools.workflow.steps.map((step, index) => {
-          const Icon = workflowIcons[index] ?? CircleCheck;
+          const Icon = workflowIcons[index] ?? UserCheck;
           return (
             <motion.li
               key={step}
